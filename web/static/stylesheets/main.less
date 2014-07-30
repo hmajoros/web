@@ -1,0 +1,34 @@
+@gray: #3c3c3c;
+@white: #fff; // change to something different later
+
+@imageURL: 'static/images';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    height: 80px;
+    background-color: @gray;
+
+    #header-title {
+        margin: 20px 0 30px 30px;
+        float: left;
+        line-height: 30px;
+        font-size: 20px;
+        color: @white;
+        letter-spacing: 5px;
+        font-family: 'Montserrat', Georgia, Serif;
+        font-weight: 400;
+        border-bottom: 1px solid @white;
+        
+        .bold {
+            font-weight: 700;
+        }
+    }
+}
+
+#cover1 {
+    background-image: url("@{imageURL}/cover.jpg");
+}
