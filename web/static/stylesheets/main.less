@@ -1,6 +1,8 @@
 /* colors */
 @gray: #2f2f2f;
 @white: #efefef;
+// @primary: #973A97; cool purpley color but probs wont use it
+@primary: #E65F3E;
 
 /* sizing / positions */
 @header-height: 60px;
@@ -24,7 +26,7 @@
     -webkit-transition: background-color 0.1s linear;
 
     &:hover {
-        background-color: rgba(47, 47, 47, 0.2);
+        background-color: rgba(230, 95, 62, 0.2);
         -webkit-transition: background-color 0.1s linear;
     }
 
@@ -48,15 +50,22 @@ body {
 
     .header-topic {
         width: 20%;
-        margin: (@header-height - @header-line-height) / 2 0;
+        height: @header-height;
         float: left;
-        line-height: @header-line-height;
-        font-size: @header-height / 3;
         text-align: center;
-        color: @white;
-        letter-spacing: 5px;
-        font-weight: 400;
     }
+}
+
+.header-link {
+    display: inline-block;
+    width: 100%;
+    padding: (@header-height - @header-line-height) / 2 0;
+    line-height: @header-line-height;
+    font-size: @header-height / 3;
+    color: @white !important;
+    text-decoration: none !important;
+    letter-spacing: 5px;
+    font-weight: 400;
 }
 
 #underline {
@@ -64,7 +73,17 @@ body {
     width: 20%;
     height: 5px;
     top: 55px;
-    background-color: @white;
+    background-color: @primary;
+    z-index: 100;
+}
+
+#underline-hover {
+    position: absolute;
+    width: 20%;
+    height: 5px;
+    top: 55px;
+    background-color: rgba(255, 255, 255, 0.15);
+    z-index: 90;
 }
 
 #cover {

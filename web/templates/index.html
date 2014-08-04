@@ -3,21 +3,21 @@
     <head>
         <title>{{title}} - hmojo</title>
         <link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css">
-        <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-        <!-- TODO: download jquery and link to local version -->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> -->
+        <script src="/static/js/jquery-1.11.1.min.js"></script>
         <script src="/static/js/main.js"></script>
         
     </head>
     <body>
         <div id="header">
-            <div class="header-topic">EDUCATION</div>
-            <div class="header-topic">WORK</div>
-            <div class="header-topic">PROJECTS</div>
-            <div class="header-topic">PHOTOS</div>
-            <div class="header-topic">CONTACT</div>
+            <div class="header-topic" data-attribute="0"><a href="#" class="header-link active">HOME</a></div>
+            <div class="header-topic" data-attribute="1"><a href="#" class="header-link">EDUCATION</a></div>
+            <div class="header-topic" data-attribute="2"><a href="#" class="header-link">EXPERIENCE</a></div>
+            <div class="header-topic" data-attribute="3"><a href="#" class="header-link">PHOTOS</a></div>
+            <div class="header-topic" data-attribute="4"><a href="#" class="header-link">CONTACT</a></div>
 
             <div id="underline"></div>
+            <div id="underline-hover"></div>
         </div>
 
         <div id="cover">
