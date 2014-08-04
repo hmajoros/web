@@ -1,35 +1,125 @@
-@gray: #3c3c3c;
-@white: #fff; // change to something different later
+/* colors */
+@gray: #2f2f2f;
+@white: #efefef;
 
+/* sizing / positions */
+@header-height: 60px;
+@header-line-height: @header-height / 2;
+
+/* other */
 @imageURL: '/static/images';
 
-* {
-    margin: 0;
-    padding: 0;
-}
+/* mixins */
+.homepage-squares {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    padding: 5px;
+    float: left;
+    color: @white;
+    font-size: 32px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgba(47, 47, 47, 0.6);
+    -webkit-transition: background-color 0.1s linear;
 
-#header {
-    height: 80px;
-    background-color: @gray;
+    &:hover {
+        background-color: rgba(47, 47, 47, 0.2);
+        -webkit-transition: background-color 0.1s linear;
+    }
 
-    #header-title {
-        margin: 25px 0 25px 30px;
-        float: left;
-        line-height: 30px;
-        font-size: 20px;
-        color: @white;
-        letter-spacing: 5px;
-        font-family: 'Montserrat', Georgia, Serif;
-        font-weight: 100;
-        
-        .bold {
-            font-weight: 700;
-        }
+    &:last-child {
+        margin-right: 0;
     }
 }
 
-#cover1 {
-    width: 1280px;
-    height: 500px;
-    background-image: url("@{imageURL}/cover.jpg");
+body {
+    margin: 0;
+    padding: 0;
+    background-color: @white;
+    font-family: 'Montserrat', Georgia, Serif;
 }
+
+#header {
+    width: 100%;
+    height: @header-height;
+    background-color: @gray;
+    position: fixed;
+
+    .header-topic {
+        width: 20%;
+        margin: (@header-height - @header-line-height) / 2 0;
+        float: left;
+        line-height: @header-line-height;
+        font-size: @header-height / 3;
+        text-align: center;
+        color: @white;
+        letter-spacing: 5px;
+        font-weight: 400;
+    }
+}
+
+#underline {
+    position: absolute;
+    width: 20%;
+    height: 5px;
+    top: 55px;
+    background-color: @white;
+}
+
+#cover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: @header-height;
+    background-image: url("@{imageURL}/cover-full.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#name {
+    width: 1020px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: @header-height * 1.5;
+
+    .letter {
+        .homepage-squares;
+    }
+}
+
+#social {
+    width: 300px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 250px;
+
+    .icon-social {
+        .homepage-squares;
+    }
+
+    #resume {
+        background-image: url('@{imageURL}/resume.png');
+        background-size: 60px;
+    }
+
+    #github {
+        background-image: url('@{imageURL}/github.png');
+        background-size: 60px;
+    }
+
+    #linkedin {
+        background-image: url('@{imageURL}/linkedin.png');
+        background-size: 60px;
+    }
+
+    #twitter {
+        background-image: url('@{imageURL}/twitter.png');
+        background-size: 60px;
+    }        
+}
+

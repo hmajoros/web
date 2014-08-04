@@ -4,13 +4,32 @@
         <title>{{title}} - hmojo</title>
         <link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css">
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <!-- TODO: download jquery and link to local version -->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/static/js/main.js"></script>
+        
     </head>
     <body>
         <div id="header">
-            <p id="header-title">HENRY | <span class="bold">MAJOROS</span></p>
+            <div class="header-topic">EDUCATION</div>
+            <div class="header-topic">WORK</div>
+            <div class="header-topic">PROJECTS</div>
+            <div class="header-topic">PHOTOS</div>
+            <div class="header-topic">CONTACT</div>
+
+            <div id="underline"></div>
         </div>
 
-        <div id="cover1"></div>
+        <div id="cover">
+            <div id="name"></div>
+
+            <div id="social">
+                <a id="resume" href="#" class="icon-social"></a>
+                <a id="github" href="#" class="icon-social"></a>
+                <a id="linkedin" href="#" class="icon-social"></a>
+                <a id="twitter" href="#" class="icon-social"></a>
+            </div>
+        </div>
 
     </body>
 </html>

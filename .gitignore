@@ -1,6 +1,7 @@
 venv
 flask/*
 *.pyc
+designs/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
