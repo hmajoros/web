@@ -1,17 +1,78 @@
+// cool purpley color but probs wont use it
+// @primary: #973A97;
+
 /* colors */
-@gray: #2f2f2f;
+@gray: #252525;
 @white: #efefef;
-// @primary: #973A97; cool purpley color but probs wont use it
 @primary: #E65F3E;
+@section-border: #ddd;
 
 /* sizing / positions */
 @header-height: 60px;
 @header-line-height: @header-height / 2;
+@section-header-height: 40px;
+@section-header-line-height: @section-header-height / 2;
 
 /* other */
 @imageURL: '/static/images';
+@fontURL: '/static/fonts';
+
+/* fonts */
+@font-face {
+    font-family: Gotham-Black;
+    src: url("@{fontURL}/Gotham-Black.otf");
+}
+
+@font-face {
+    font-family: Gotham-Bold;
+    src: url("@{fontURL}/Gotham-Bold.ttf");
+}
+
+@font-face {
+    font-family: Gotham-Book;
+    src: url("@{fontURL}/Gotham-Book.ttf");
+}
+
+@font-face {
+    font-family: Gotham-Medium;
+    src: url("@{fontURL}/Gotham-Medium.ttf");
+}
+
+@font-face {
+    font-family: Gotham-Light;
+    src: url("@{fontURL}/Gotham-Light.ttf");
+}
+
+@font-face {
+    font-family: Sentinel-Bold;
+    src: url("@{fontURL}/Sentinel-Bold.ttf");
+}
+
+@font-face {
+    font-family: Sentinel-Black;
+    src: url("@{fontURL}/Sentinel-Black.ttf");
+}
+
+@font-face {
+    font-family: Sentinel-Light;
+    src: url("@{fontURL}/Sentinel-Light.ttf");
+}
+
+@font-face {
+    font-family: Sentinel-Medium;
+    src: url("@{fontURL}/Sentinel-Medium.ttf");
+}
+
+@gotham-font-family: Gotham-Medium;
+@header-font-family: Sentinel-Medium;
+@body-font-family: Sentinel-Light;
+
 
 /* mixins */
+.hex2rgb(@hex, @opacity) {
+    background-color: rgba(red(@hex), green(@hex), blue(@hex), @opacity);
+}
+
 .homepage-squares {
     width: 50px;
     height: 50px;
@@ -22,27 +83,36 @@
     font-size: 32px;
     text-align: center;
     line-height: 50px;
-    background-color: rgba(47, 47, 47, 0.6);
+    .hex2rgb(@gray, 0.6);
     -webkit-transition: background-color 0.1s linear;
 
     &:hover {
-        background-color: rgba(230, 95, 62, 0.2);
+        .hex2rgb(@primary, 0.2);
         -webkit-transition: background-color 0.1s linear;
     }
 }
 
+/* normal less code */
+
 body {
     margin: 0;
     padding: 0;
-    background-color: @white;
-    font-family: 'Montserrat', Georgia, Serif;
+    background-color: white;
+    font-family: @body-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: @header-font-family;
 }
 
 #header {
     width: 100%;
     height: @header-height;
     background-color: @gray;
+    // background-image: url("@{imageURL}/diamonds.png");
+    // background-size: 60px;
     position: fixed;
+    z-index: 100;
 
     .header-topic {
         width: 20%;
@@ -58,6 +128,7 @@ body {
     padding: (@header-height - @header-line-height) / 2 0;
     line-height: @header-line-height;
     font-size: @header-height / 3;
+    font-family: @gotham-font-family;
     color: @white !important;
     text-decoration: none !important;
     letter-spacing: 5px;
@@ -83,11 +154,11 @@ body {
 }
 
 #cover {
-    position: fixed;
     width: 100%;
-    height: 100%;
-    top: @header-height;
-    background-image: url("@{imageURL}/cover-full.jpg");
+    // height added in main.js
+    // background-image: url("@{imageURL}/cover-full.jpg");
+    // image added in main.js
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     -webkit-background-size: cover;
@@ -100,7 +171,8 @@ body {
     width: 1020px;
     height: 60px;
     margin: 0 auto;
-    margin-top: @header-height * 1.5;
+    padding-top: @header-height * 2.5;
+    font-family: @gotham-font-family;
 
     .tile-back {
         .homepage-squares;
@@ -127,22 +199,22 @@ body {
         }
     }
 
-    #resume {
+    #resume .icon-social {
         background-image: url('@{imageURL}/resume.png');
         background-size: 60px;
     }
 
-    #github {
+    #github .icon-social {
         background-image: url('@{imageURL}/github.png');
         background-size: 60px;
     }
 
-    #linkedin {
+    #linkedin .icon-social {
         background-image: url('@{imageURL}/linkedin.png');
         background-size: 60px;
     }
 
-    #twitter {
+    #twitter .icon-social {
         background-image: url('@{imageURL}/twitter.png');
         background-size: 60px;
     }        
@@ -152,10 +224,10 @@ body {
 .flip-container {
     float: left;
     margin-right: 20px;
-    -webkit-perspective: 1000;
-    -moz-perspective: 1000;
-    -o-perspective: 1000;
-    perspective: 1000;
+    -webkit-perspective: 400;
+    -moz-perspective: 400;
+    -o-perspective: 400;
+    perspective: 400;
 
     &.flipped .tile {
         -webkit-transform: rotateY(180deg);
@@ -198,4 +270,42 @@ body {
     transform: rotateY(180deg);
 }
 
+#education {
+    width: 100%;
+    height: 400px;
+}
 
+.section-header {
+    display: inline-block;
+    width: 100%;
+    height: @section-header-height;
+    padding: (@section-header-height - @section-header-line-height) / 2 0;
+    border-bottom: 3px solid @primary;
+    // background-color: @gray;
+    background-image: url("@{imageURL}/diamonds.png");
+    background-size: 60px;
+    color: @white;
+    line-height: @section-header-height;
+    letter-spacing: 5px;
+    font-size: @section-header-height / 1.5;
+    font-family: @header-font-family;
+    text-align: center;
+    font-weight: 400;
+}
+
+.section-body {
+    border: 5px solid @section-border;
+    padding: 20px;
+}
+
+
+
+.diamond-3 {
+    position: relative;
+    width: 33%;
+    height: 200px;
+    float: left;
+    border: 5px solid @gray;
+    background-image: url("@{imageURL}/diamonds.png");
+    background-size: 60px;
+}
