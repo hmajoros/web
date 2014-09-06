@@ -18,16 +18,28 @@
 
     function setCoverHeight() {
         var screenHeight = $(window).height();
-        $('#cover').css({height: screenHeight});
+        $('#cover').css({ height: screenHeight });
+
+        if (screenHeight < 450) {
+            $('#cover').css({ height: 450 });
+        }
     }
 
     function printNameTiles() {
         var nameString = "HENRY MAJOROS",
-            nameArray = nameString.split("");
+            nameArray = nameString.split(""),
+            winHeight = $(window).height();
 
         for (var i = 0; i < nameArray.length; i++) {
             $('#name').append('<div class="flip-container"><div class="tile"><div class="tile-front"></div><div class="tile-back">' + nameArray[i] + '</div></div></div>');
         }
+
+        $('#social').css({ marginTop: winHeight - 360 });
+
+        if (winHeight < 450) {
+            $('#social').css({ marginTop: 90 });
+        }
+
     }
 
     function flipNameTiles() {
