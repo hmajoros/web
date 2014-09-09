@@ -309,14 +309,17 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
 }
 
+.pics { 
+    width: 100%;
+    padding: 10px;
 
+    &:hover {
+        opacity: .6;
+    }
 
-.diamond-3 {
-    position: relative;
-    width: 33%;
-    height: 200px;
-    float: left;
-    border: 5px solid @gray;
-    background-image: url("@{imageURL}/diamonds.png");
-    background-size: 60px;
+    .img-overlay {
+        width: 100%;
+        padding: 10px;
+        background-color: @gray;
+    }
 }
