@@ -14,6 +14,7 @@
         setCoverHeight();
         printNameTiles();
         flipNameTiles();
+        renderPhotoSection();
     }
 
     function setCoverHeight() {
@@ -83,4 +84,18 @@
         $('#social').css({ opacity: socialOpacity });
     }
 
+    function renderPhotoSection() {
+        $('#photo1').css('background-image', 'url(/static/images/photos/tracks.jpg)');
+        $('#photo2').css('background-image', 'url(/static/images/photos/swan.jpg)');
+        $('#photo3').css('background-image', 'url(/static/images/photos/golf.jpg)');
+        $('#photo4').css('background-image', 'url(/static/images/photos/lakeside.jpg)');
+        $('#photo5').css('background-image', 'url(/static/images/photos/sunset.jpg)');
+        $('#photo6').css('background-image', 'url(/static/images/photos/dunes.jpg)');
+        
+        $('.photo').css('width', '100%');
+        var height = $('.photo').width() / 1.5;
+        $('.photo').css('height', height); 
+    }
+
 })();
+

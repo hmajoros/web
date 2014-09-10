@@ -11,10 +11,10 @@
     <body>
         <div id="header">
             <div class="header-topic" data-attribute="0"><a href="#" class="header-link">HOME</a></div>
-            <div class="header-topic" data-attribute="1"><a href="#" class="header-link">EDUCATION</a></div>
-            <div class="header-topic" data-attribute="2"><a href="#" class="header-link">EXPERIENCE</a></div>
-            <div class="header-topic" data-attribute="3"><a href="#" class="header-link">PHOTOS</a></div>
-            <div class="header-topic" data-attribute="4"><a href="#" class="header-link">CONTACT</a></div>
+            <div class="header-topic" data-attribute="1"><a href="#education-anchor" class="header-link">EDUCATION</a></div>
+            <div class="header-topic" data-attribute="2"><a href="#experience-anchor" class="header-link">EXPERIENCE</a></div>
+            <div class="header-topic" data-attribute="3"><a href="#photos-anchor" class="header-link">PHOTOS</a></div>
+            <div class="header-topic" data-attribute="4"><a href="#contact-anchor" class="header-link">CONTACT</a></div>
 
             <div id="underline"></div>
             <div id="underline-hover"></div>
@@ -83,8 +83,9 @@
             </div>
         </div>
 
-        <div class="section-header">EDUCATION</div>
-        <div id="education" class="container-fluid main-content">
+        <span class="anchor" id="education-anchor"></span>
+        <div id="education" class="section-header">EDUCATION</div>
+        <div class="container-fluid main-content">
             <div class="grid">
                 <div class="col-md-4 text-center">
                     <h1>About Me</h1>
@@ -105,8 +106,9 @@
             </div>
         </div>
 
-        <div class="section-header">EXPERIENCE</div>
-        <div id="experience" class="container-fluid main-content">
+        <span class="anchor" id="experience-anchor"></span>
+        <div id="experience" class="section-header">EXPERIENCE</div>
+        <div class="container-fluid main-content">
             <div class="grid">
                 <div class="col-md-4 text-center">
                     <h1>About Me</h1>
@@ -127,28 +129,67 @@
                 </div>
             </div>
         </div>
-
-        <div class="section-header">PHOTOS</div>
-        <div id="photos" class="container-fluid main-content">
+    
+        <span class="anchor" id="photos-anchor"></span>
+        <div id="photos" class="section-header">PHOTOS</div>
+        <div class="container-fluid main-content">
             <div class="grid">
                 <div class="col-md-4 text-center">
-                    <img src="/static/images/photos/tracks.jpg" class="pics pics-nature" />
-                    <div class="img-overlay">
-                        <h3>Nature</h3>
-                        <p>some enlightening text about what these photos are here for.</p>
+                    <div id="photo1" class="photo">
+                        <div class="photo-text">
+                            <h3>Title</h3>
+                            <p>Some text about the photo. this is a descrip[tion</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="/static/images/photos/tracks.jpg" class="pics pics-nature" />
+                    <div id="photo2" class="photo">
+                        <div class="photo-text">
+                            <h3>Title</h3>
+                            <p>Some text about the photo. this is a descrip[tion</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4 text-center">
-                    <img src="/static/images/photos/tracks.jpg" class="pics pics-nature" />
+                    <div id="photo3" class="photo">
+                        <div class="photo-text">
+                            <h3>Title</h3>
+                            <p>Some text about the photo. this is a descrip[tion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="col-md-4 text-center">
+                    <div id="photo4" class="photo">
+                        <div class="photo-text">
+                            <h3>Title</h3>
+                            <p>Some text about the photo. this is a descrip[tion</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div id="photo5" class="photo">
+                        <div class="photo-text">
+                            <h3>Title</h3>
+                            <p>Some text about the photo. this is a descrip[tion</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div id="photo6" class="photo">
+                        <div class="photo-text">
+                            <h3>Title</h3>
+                            <p>Some text about the photo. this is a descrip[tion</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="section-header">CONTACT</div>
-        <div id="contact" class="container-fluid main-content">
+        <span class="anchor" id="contact-anchor"></span>
+        <div id="contact" class="section-header">CONTACT</div>
+        <div class="container-fluid main-content">
             <div class="grid">
                 <div class="col-md-4 text-center">
                     <h1>About Me</h1>
