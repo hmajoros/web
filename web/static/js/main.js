@@ -1,5 +1,7 @@
 (function() {
 
+    var currentSection = 0; // TODO: figure out another way where this isn't a global
+
     $(document).ready(onPageLoad());
 
     // var photoInfo = {
@@ -122,24 +124,30 @@
     }
     
     function renderHeader() {
-        $('#ghost-hdr').css({ display: 'none' });
+        var break1 = $('#education').offset().top,
+            break2 = $('#experience').offset().top,
+            break3 = $('#photos').offset().top,
+            break4 = $('#contact').offset().top,
+            scroll = $(window).scrollTop(),
+            newSection;
 
-        $('.section-header').each(function() {
-            var offset = $(this).offset();
-                height = ($(this).nextAll('.section-header')) ? $(this).nextAll('.section-header:first').offset().top - offset.top + 1: 6969, 
-                hdrText = $(this).attr('id'),
-                scrollTop = $(window).scrollTop(),
-                ghost = $('#ghost-hdr');
+        if (scroll < break1) {
+            newSection = 0;
+        } else if (break1 <= scroll && scroll < break2) {
+            newSection = 1;
+        } else if (break2 <= scroll && scroll < break3) {
+            newSection = 2;
+        } else if (break3 <= scroll && scroll < break4) {
+            newSection = 3;
+        } else {
+            newSection = 4;
+        }
 
-            console.warn(scrollTop < offset.top + height); 
-            console.warn(scrollTop);
-            console.warn(offset.top);
-            console.warn(height);
-            if ((hdrText != 'ghost-hdr') && (scrollTop > offset.top) && (scrollTop < offset.top + height)) {
-                ghost.css({ display: 'block' });
-                ghost.text(hdrText.toUpperCase());
-            }
-        });
+        if (newSection != currentSection) {
+            var leftPercent = (newSection * 20) + '%'; 
+            $('#underline').animate({ left: leftPercent },  200);
+            currentSection = newSection;
+        }
     }
         
 })();

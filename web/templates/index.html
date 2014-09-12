@@ -10,11 +10,11 @@
     </head>
     <body>
         <div id="header">
-            <div class="header-topic" data-attribute="0"><a href="#" class="header-link">HOME</a></div>
-            <div class="header-topic" data-attribute="1"><a href="#education" class="header-link">EDUCATION</a></div>
-            <div class="header-topic" data-attribute="2"><a href="#experience" class="header-link">EXPERIENCE</a></div>
-            <div class="header-topic" data-attribute="3"><a href="#photos" class="header-link">PHOTOS</a></div>
-            <div class="header-topic" data-attribute="4"><a href="#contact" class="header-link">CONTACT</a></div>
+            <div class="header-topic" data-attribute="0"><a data-scroll href="#" class="header-link">HOME</a></div>
+            <div class="header-topic" data-attribute="1"><a data-scroll href="#education" class="header-link">EDUCATION</a></div>
+            <div class="header-topic" data-attribute="2"><a data-scroll href="#experience" class="header-link">EXPERIENCE</a></div>
+            <div class="header-topic" data-attribute="3"><a data-scroll href="#photos" class="header-link">PHOTOS</a></div>
+            <div class="header-topic" data-attribute="4"><a data-scroll href="#contact" class="header-link">CONTACT</a></div>
 
             <div id="underline"></div>
             <div id="underline-hover"></div>
@@ -180,5 +180,10 @@
 
     <script src="/static/js/bootstrap.min.js"></script>    
     <script src="/static/js/main.js"></script>
+    <script src="/static/js/bind-polyfill.js"></script>
+    <script src="/static/js/smooth-scroll.js"></script>
+    <script>
+        smoothScroll.init();
+    </script>     
     </body>
 </html>
