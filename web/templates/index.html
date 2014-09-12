@@ -11,14 +11,16 @@
     <body>
         <div id="header">
             <div class="header-topic" data-attribute="0"><a href="#" class="header-link">HOME</a></div>
-            <div class="header-topic" data-attribute="1"><a href="#education-anchor" class="header-link">EDUCATION</a></div>
-            <div class="header-topic" data-attribute="2"><a href="#experience-anchor" class="header-link">EXPERIENCE</a></div>
-            <div class="header-topic" data-attribute="3"><a href="#photos-anchor" class="header-link">PHOTOS</a></div>
-            <div class="header-topic" data-attribute="4"><a href="#contact-anchor" class="header-link">CONTACT</a></div>
+            <div class="header-topic" data-attribute="1"><a href="#education" class="header-link">EDUCATION</a></div>
+            <div class="header-topic" data-attribute="2"><a href="#experience" class="header-link">EXPERIENCE</a></div>
+            <div class="header-topic" data-attribute="3"><a href="#photos" class="header-link">PHOTOS</a></div>
+            <div class="header-topic" data-attribute="4"><a href="#contact" class="header-link">CONTACT</a></div>
 
             <div id="underline"></div>
             <div id="underline-hover"></div>
         </div>
+
+        <div id="ghost-hdr" class="section-header"></div> <!-- acts as a sticky header -->
 
         <div id="cover">
             <div id="name"></div>
@@ -63,27 +65,13 @@
 
         <div id="about" class="container-fluid main-content">
             <div class="grid">
-                <div class="col-md-4 text-center">
+                <div class="col-md-12">
                     <h1>About Me</h1>
-                    <p>i dont know what i want to put here</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h1>More About Me</h1>
-                    <p>i dont know what i want to put here</p>
-                </div>
-                <div class="col-md-4 text-center">
-                    <h1>Relevant Coursework</h1>
-                    <ul style="text-align: left">
-                        <li><strong>281:</strong> Data Structures and Algorithms</li>
-                        <li><strong>370:</strong> Computer Organization</li>
-                        <li><strong>492:</strong> Artificial Intelligence</li>
-                        <li><strong>484:</strong> Database Management Systems</li>
-                    </ul>
+                    <p class="lead-text">My background in photography paired with strong web development skills allows me to create sleek and polished designs. Careful thought is put into even the smallest aspects of all my work, and I have understand the importance of hard work since a young age. Although most of my formal education has been with C++, I consider myself a very strong front end developer. My first experience with web development was in the 10th grade and I have been teaching myself ever since.</p>
                 </div>
             </div>
         </div>
 
-        <span class="anchor" id="education-anchor"></span>
         <div id="education" class="section-header">EDUCATION</div>
         <div class="container-fluid main-content">
             <div class="grid">
@@ -106,7 +94,6 @@
             </div>
         </div>
 
-        <span class="anchor" id="experience-anchor"></span>
         <div id="experience" class="section-header">EXPERIENCE</div>
         <div class="container-fluid main-content">
             <div class="grid">
@@ -130,64 +117,44 @@
             </div>
         </div>
     
-        <span class="anchor" id="photos-anchor"></span>
         <div id="photos" class="section-header">PHOTOS</div>
         <div class="container-fluid main-content">
             <div class="grid">
                 <div class="col-md-4 text-center">
                     <div id="photo1" class="photo">
-                        <div class="photo-text">
-                            <h3>Title</h3>
-                            <p>Some text about the photo. this is a descrip[tion</p>
-                        </div>
+                        <div class="photo-text"></div>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
                     <div id="photo2" class="photo">
-                        <div class="photo-text">
-                            <h3>Title</h3>
-                            <p>Some text about the photo. this is a descrip[tion</p>
-                        </div>
+                        <div class="photo-text"></div>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
                     <div id="photo3" class="photo">
-                        <div class="photo-text">
-                            <h3>Title</h3>
-                            <p>Some text about the photo. this is a descrip[tion</p>
-                        </div>
+                        <div class="photo-text"></div>
                     </div>
                 </div>
             </div>
             <div class="grid">
                 <div class="col-md-4 text-center">
                     <div id="photo4" class="photo">
-                        <div class="photo-text">
-                            <h3>Title</h3>
-                            <p>Some text about the photo. this is a descrip[tion</p>
-                        </div>
+                        <div class="photo-text"></div>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
                     <div id="photo5" class="photo">
-                        <div class="photo-text">
-                            <h3>Title</h3>
-                            <p>Some text about the photo. this is a descrip[tion</p>
-                        </div>
+                        <div class="photo-text"></div>
                     </div>
                 </div>
                 <div class="col-md-4 text-center">
                     <div id="photo6" class="photo">
-                        <div class="photo-text">
-                            <h3>Title</h3>
-                            <p>Some text about the photo. this is a descrip[tion</p>
-                        </div>
+                        <div class="photo-text"></div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <span class="anchor" id="contact-anchor"></span>
         <div id="contact" class="section-header">CONTACT</div>
         <div class="container-fluid main-content">
             <div class="grid">
@@ -211,7 +178,7 @@
             </div>
         </div>
 
-    
+    <script src="/static/js/bootstrap.min.js"></script>    
     <script src="/static/js/main.js"></script>
     </body>
 </html>

@@ -2,6 +2,19 @@
 
     $(document).ready(onPageLoad());
 
+    // var photoInfo = {
+    //     url: " ",
+    //     title: " ",
+    //     desc: " "
+    // };
+
+    // var photoArray = [];
+    // photoArray.push({ url: 'tracks.jpg', title: 'Tracks', desc: 'my description for this photo, it tells more about the backstory and shit like that' });
+    // photoArray.push({ url: 'swan.jpg', title: 'Swan', desc: 'heres another description fro the swan photo. blab bla lj bla bl blabblha blbha blah bl' });
+    // photoArray.push({ url: 'golf.jpg', title: 'Golf', desc: 'this is a nother photo and my spelling is really bad cause im tyruing to type fase' });
+    // photoArray.push({ url: 'lakeside.jpg', title: 'Lakeside', desc: 'i really like this picture it was take up in glen arbor, MI' });
+    // photoArray.push({ url: 'sunset.jpg', title: 'Sunset', desc: 'this pic was taken outside of south beach miami on the drive down to key west' });
+    // photoArray.push({ url: 'dunes.jpg', title: 'Dunes', desc: 'taken summer 2014 at sleeping bear dunes. love this picture its neat' });
 
     function onPageLoad() {
         /* bind event listeners */
@@ -9,6 +22,7 @@
         $('.header-topic').on('click', renderHeaderClick);
         $('#header').on('mouseleave', renderHeaderMouseleave);
         $(window).on('scroll', fadeCover);
+        $(window).on('scroll', renderHeader);
 
         /* call page load functions */
         setCoverHeight();
@@ -85,17 +99,49 @@
     }
 
     function renderPhotoSection() {
-        $('#photo1').css('background-image', 'url(/static/images/photos/tracks.jpg)');
-        $('#photo2').css('background-image', 'url(/static/images/photos/swan.jpg)');
-        $('#photo3').css('background-image', 'url(/static/images/photos/golf.jpg)');
-        $('#photo4').css('background-image', 'url(/static/images/photos/lakeside.jpg)');
-        $('#photo5').css('background-image', 'url(/static/images/photos/sunset.jpg)');
-        $('#photo6').css('background-image', 'url(/static/images/photos/dunes.jpg)');
-        
+        var baseURL = '/static/images/photos/',
+            photoArray = [];
+            
+        photoArray.push({ url: 'tracks.jpg', title: 'Tracks', desc: 'my description for this photo, it tells more about the backstory and shit like that' });
+        photoArray.push({ url: 'swan.jpg', title: 'Swan', desc: 'heres another description fro the swan photo. blab bla lj bla bl blabblha blbha blah bl' });
+        photoArray.push({ url: 'golf.jpg', title: 'Golf', desc: 'this is a nother photo and my spelling is really bad cause im tyruing to type fase' });
+        photoArray.push({ url: 'lakeside.jpg', title: 'Lakeside', desc: 'i really like this picture it was take up in glen arbor, MI' });
+        photoArray.push({ url: 'sunset.jpg', title: 'Sunset', desc: 'this pic was taken outside of south beach miami on the drive down to key west' });
+        photoArray.push({ url: 'dunes.jpg', title: 'Dunes', desc: 'taken summer 2014 at sleeping bear dunes. love this picture its neat' });
+
+        for (var i = 0; i < photoArray.length; i++) {
+            var elem = '#photo' + (i + 1);
+            $(elem).css('background-image', 'url(' + baseURL + photoArray[i].url + ')');
+            $(elem).find('.photo-text').append('<h3>' + photoArray[i].title + '</h3>');
+            $(elem).find('.photo-text').append('<p>' + photoArray[i].desc + '</p>');
+        }
+
         $('.photo').css('width', '100%');
         var height = $('.photo').width() / 1.5;
         $('.photo').css('height', height); 
     }
+    
+    function renderHeader() {
+        $('#ghost-hdr').css({ display: 'none' });
 
+        $('.section-header').each(function() {
+            var offset = $(this).offset();
+                height = ($(this).nextAll('.section-header')) ? $(this).nextAll('.section-header:first').offset().top - offset.top + 1: 6969, 
+                hdrText = $(this).attr('id'),
+                scrollTop = $(window).scrollTop(),
+                ghost = $('#ghost-hdr');
+
+            console.warn(scrollTop < offset.top + height); 
+            console.warn(scrollTop);
+            console.warn(offset.top);
+            console.warn(height);
+            if ((hdrText != 'ghost-hdr') && (scrollTop > offset.top) && (scrollTop < offset.top + height)) {
+                ghost.css({ display: 'block' });
+                ghost.text(hdrText.toUpperCase());
+            }
+        });
+    }
+        
 })();
+
 
