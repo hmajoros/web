@@ -90,12 +90,6 @@ h6 {
   float: left;
   text-align: center;
 }
-#ghost-hdr {
-  position: fixed;
-  display: none;
-  top: 0;
-  z-index: 200;
-}
 .header-link {
   display: inline-block;
   width: 100%;
