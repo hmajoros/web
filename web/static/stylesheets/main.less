@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .standout { 
     font-family: @header-font-family;
-    color: @primary;
+    color: @primary !important;
 }
 
 #header {
@@ -327,8 +327,14 @@ h1, h2, h3, h4, h5, h6 {
     padding: 20px;
 }
 
+.job-photo {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
 .photo {
     width: 100%;
+    max-width: 600px;
     // margin-top: 15px;
     margin-bottom: 30px;
     background-size: 100%;

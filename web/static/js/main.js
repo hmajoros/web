@@ -1,6 +1,7 @@
 (function() {
 
     var currentSection = 0; // TODO: figure out another way where this isn't a global
+        // lockActiveTab = false;
 
     $(document).ready(onPageLoad());
 
@@ -21,10 +22,11 @@
     function onPageLoad() {
         /* bind event listeners */
         $('.header-topic').on('mouseover', renderHeaderMouseover);
-        $('.header-topic').on('click', renderHeaderClick);
+        // $('.header-topic').on('click', renderHeaderClick);
         $('#header').on('mouseleave', renderHeaderMouseleave);
         $(window).on('scroll', fadeCover);
         $(window).on('scroll', renderHeader);
+        $(window).on('resize', renderPhotoResize);
 
         /* call page load functions */
         setCoverHeight();
@@ -83,10 +85,12 @@
         $('#underline-hover').hide();
     }
 
-    function renderHeaderClick() {
-        var leftPercent = this.getAttribute('data-attribute') * 20;
-        $('#underline').animate({left: leftPercent + '%'}, 200);
-    }
+    // function renderHeaderClick() {
+    //     var leftPercent = this.getAttribute('data-attribute') * 20;
+    //     lockActiveTab = true;
+    //     $('#underline').animate({left: leftPercent + '%'}, 500).delay(500);
+    //     lockActiveTab = false; // unlock for scroll ability
+    // }
 
     function fadeCover() {
         var coverHeight = $(window).height(),
@@ -145,9 +149,24 @@
 
         if (newSection != currentSection) {
             var leftPercent = (newSection * 20) + '%'; 
-            $('#underline').animate({ left: leftPercent },  200);
+            // if (!lockActiveTab) {
+                console.warn('not locked');
+                $('#underline').animate({ left: leftPercent },  200);
+            // }
             currentSection = newSection;
         }
+    }
+
+    function renderPhotoResize() {
+        $('.photo').each(function() {
+            $(this).css({ width: 100 + '%' });
+            var newHeight = $(this).width() / 1.5;
+            $(this).css({ height: newHeight });
+        });
+
+        // $('.photo').each(function() {
+        //     $(this).css({ })
+        // });
     }
         
 })();
