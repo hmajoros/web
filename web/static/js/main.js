@@ -104,12 +104,12 @@
         var baseURL = '/static/images/photos/',
             photoArray = [];
             
-        photoArray.push({ url: 'tracks.jpg', title: 'Tracks', desc: 'my description for this photo, it tells more about the backstory and shit like that' });
-        photoArray.push({ url: 'swan.jpg', title: 'Swan', desc: 'heres another description fro the swan photo. blab bla lj bla bl blabblha blbha blah bl' });
-        photoArray.push({ url: 'golf.jpg', title: 'Golf', desc: 'this is a nother photo and my spelling is really bad cause im tyruing to type fase' });
-        photoArray.push({ url: 'lakeside.jpg', title: 'Lakeside', desc: 'i really like this picture it was take up in glen arbor, MI' });
-        photoArray.push({ url: 'sunset.jpg', title: 'Sunset', desc: 'this pic was taken outside of south beach miami on the drive down to key west' });
-        photoArray.push({ url: 'dunes.jpg', title: 'Dunes', desc: 'taken summer 2014 at sleeping bear dunes. love this picture its neat' });
+        photoArray.push({ url: 'tracks.jpg', title: 'Tracks', desc: 'Taken at the Nichols Arboretum, University of Michigan. Fall 2012' });
+        photoArray.push({ url: 'swan.jpg', title: 'Swan', desc: 'Taken at the Nichols Arboretum, University of Michigan. Winter 2013' });
+        photoArray.push({ url: 'golf.jpg', title: 'Golf', desc: 'Private driving range at a family members house in Glen Arbor MI. Summer 2014' });
+        photoArray.push({ url: 'lakeside.jpg', title: 'Lakeside', desc: 'View of Lake Michigan and the surrounding beach. Glen Arbor MI, Summer 2014' });
+        photoArray.push({ url: 'sunset.jpg', title: 'Sunset', desc: 'Sunset over a Miami highway. Taken about 16 hours into a 26 hour road trip. Spring 2013' });
+        photoArray.push({ url: 'dunes.jpg', title: 'Dunes', desc: 'View of Lake Michigan from the top of the Sleeping Bear Dunes. Glen Arbor MI, Summer 2014' });
 
         for (var i = 0; i < photoArray.length; i++) {
             var elem = '#photo' + (i + 1);
