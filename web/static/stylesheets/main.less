@@ -17,6 +17,21 @@
 @imageURL: '/static/images';
 @fontURL: '/static/fonts';
 
+/* custom icons */
+.icon-more {
+    position: absolute;
+    width: @header-height / 2;
+    height: @header-height / 2;
+    top: 15px;
+    right: 15px;
+    background: url('@{imageURL}/icon-more.png');
+    background-size: 100%;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
 /* fonts */
 @font-face {
     font-family: Gotham-Black;
@@ -92,8 +107,6 @@
     }
 }
 
-
-
 /************************************************************************
  *
  *                            Cover Styles
@@ -127,11 +140,28 @@ h1, h2, h3, h4, h5, h6 {
     background-color: @gray;
     z-index: 100;
 
-    .header-topic {
+   .header-topic {
         width: 20%;
         height: @header-height;
         float: left;
         text-align: center;
+    }
+}
+
+#header-collapse {
+    position: fixed;
+    width: 100%;
+    background-color: @gray;
+    z-index: 100;
+    text-align: center;
+
+    &.closed {
+        height: @header-height;
+        overflow-y: hidden;
+    }
+ 
+    .collapsed {
+        padding-top: @header-height;
     }
 }
 
@@ -146,6 +176,16 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none !important;
     letter-spacing: 5px;
     font-weight: 400;
+
+    &.active {
+        color: @primary !important;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .header-link {
+        font-size: @header-height / 4.25;
+    }
 }
 
 #underline {
@@ -347,12 +387,14 @@ h1, h2, h3, h4, h5, h6 {
     padding: 5px;
     opacity: 0;
     -webkit-transition: opacity 0.1s linear;
+    -moz-transition: opacity 0.1s linear;
     
     .hex2rgb(#000, .5);
     
     &:hover {
         opacity: 1;
         -webkit-transition: opacity 0.1s linear;
+        -moz-transition: opacity 0.1s linear;
     }
 }
 
