@@ -1,23 +1,8 @@
 (function() {
 
     var currentSection = 0; // TODO: figure out another way where this isn't a global
-        // lockActiveTab = false;
 
     $(document).ready(onPageLoad());
-
-    // var photoInfo = {
-    //     url: " ",
-    //     title: " ",
-    //     desc: " "
-    // };
-
-    // var photoArray = [];
-    // photoArray.push({ url: 'tracks.jpg', title: 'Tracks', desc: 'my description for this photo, it tells more about the backstory and shit like that' });
-    // photoArray.push({ url: 'swan.jpg', title: 'Swan', desc: 'heres another description fro the swan photo. blab bla lj bla bl blabblha blbha blah bl' });
-    // photoArray.push({ url: 'golf.jpg', title: 'Golf', desc: 'this is a nother photo and my spelling is really bad cause im tyruing to type fase' });
-    // photoArray.push({ url: 'lakeside.jpg', title: 'Lakeside', desc: 'i really like this picture it was take up in glen arbor, MI' });
-    // photoArray.push({ url: 'sunset.jpg', title: 'Sunset', desc: 'this pic was taken outside of south beach miami on the drive down to key west' });
-    // photoArray.push({ url: 'dunes.jpg', title: 'Dunes', desc: 'taken summer 2014 at sleeping bear dunes. love this picture its neat' });
 
     function onPageLoad() {
         /* bind event listeners */
