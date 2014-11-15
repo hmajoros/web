@@ -1,0 +1,56 @@
+@font-face {
+  font-family: Gotham-Medium;
+  src: url("/static/fonts/Gotham-Medium.ttf"); }
+body, html {
+  padding: 0;
+  margin: 0; }
+
+#sidebar {
+  width: 300px;
+  height: 1280px;
+  background-color: #262626; }
+
+#sidebar-nav {
+  position: relative;
+  width: 100%;
+  top: 100px;
+  overflow: scroll; }
+  #sidebar-nav .sidebar-header {
+    position: relative;
+    height: 20px;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #2f2f2f;
+    color: #fff;
+    font-family: Gotham-Medium;
+    font-size: 20px;
+    letter-spacing: 5px;
+    overflow: hidden;
+    cursor: pointer; }
+    #sidebar-nav .sidebar-header:first-child {
+      border-top: 1px solid #2f2f2f; }
+    #sidebar-nav .sidebar-header.active {
+      background-color: #2f2f2f; }
+    #sidebar-nav .sidebar-header > span {
+      position: relative;
+      z-index: 5; }
+    #sidebar-nav .sidebar-header .clickCircle {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background-color: #2f2f2f;
+      border-radius: 50%;
+      z-index: 3; }
+
+#face {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  top: 50px;
+  margin: auto;
+  border-radius: 85px;
+  border: 5px solid #2f2f2f;
+  background: url("/static/images/headshot.jpg");
+  background-size: contain; }
+
+/*# sourceMappingURL=beta.css.map */

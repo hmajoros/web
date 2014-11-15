@@ -1,0 +1,83 @@
+// colors
+$primary:  #a00000;
+$secondary: #2f2f2f;
+$tertiary: #262626;
+
+// sizes n shit
+$sidebarWidth: 300px;
+
+ @font-face {
+    font-family: Gotham-Medium;
+    src: url("/static/fonts/Gotham-Medium.ttf");
+ }
+
+$bodyFontFamily: Gotham-Medium;
+
+// actual css stuffs now
+body, html {
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar {
+    width: $sidebarWidth;
+    height: 1280px;
+    background-color: $tertiary;
+}
+
+#sidebar-nav {
+    position: relative;
+    width: 100%;
+    top: 100px;
+    overflow: scroll;
+
+    .sidebar-header {
+        position: relative;
+        height: 20px;
+        padding: 20px 0;
+        text-align: center;
+        border-bottom: 1px solid $secondary;
+        color: #fff;
+        font-family: $bodyFontFamily;
+        font-size: 20px;
+        letter-spacing: 5px;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:first-child {
+            border-top: 1px solid $secondary;
+        }
+
+        &.active {
+            background-color: $secondary;
+        }
+        
+        & > span {
+            position: relative;
+            z-index: 5;
+        }
+
+        & .clickCircle {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: $secondary;
+            border-radius: 50%;
+            z-index: 3;
+        }
+    }
+}
+
+#face {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    top: 50px;
+    margin: auto;
+    border-radius: 85px;
+    border: 5px solid $secondary;
+    background: url('/static/images/headshot.jpg');
+    background-size: contain;
+}
+
+
