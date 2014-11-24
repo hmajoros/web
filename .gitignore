@@ -3,8 +3,9 @@ flask/*
 *.pyc
 design/*
 *.psd
-*.DS_Store
+.DS_Store
 .sass-cache
+*.swp
 
 
 # Byte-compiled / optimized / DLL files

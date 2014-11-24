@@ -1,40 +1,56 @@
 @font-face {
   font-family: Gotham-Medium;
   src: url("/static/fonts/Gotham-Medium.ttf"); }
+@font-face {
+  font-family: Sentinel-Light;
+  src: url("/static/fonts/Sentinel-Light.ttf"); }
+@font-face {
+  font-family: Sentinel-Medium;
+  src: url("/static/fonts/Sentinel-Medium.ttf"); }
 body, html {
   padding: 0;
   margin: 0; }
 
+.standout {
+  color: #E65F3E; }
+
+* {
+  font-family: Sentinel-Light; }
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: Sentinel-Medium !important; }
+
 #sidebar {
+  position: fixed;
   width: 300px;
-  height: 1280px;
+  float: left;
   background-color: #262626; }
 
 #sidebar-nav {
-  position: relative;
-  width: 100%;
-  top: 100px;
-  overflow: scroll; }
-  #sidebar-nav .sidebar-header {
+  position: absolute;
+  width: 300px;
+  bottom: 0; }
+  #sidebar-nav .sidebar-nav-item {
     position: relative;
-    height: 20px;
+    height: 60px;
     padding: 20px 0;
     text-align: center;
     border-bottom: 1px solid #2f2f2f;
     color: #fff;
-    font-family: Gotham-Medium;
     font-size: 20px;
     letter-spacing: 5px;
-    overflow: hidden;
-    cursor: pointer; }
-    #sidebar-nav .sidebar-header:first-child {
+    cursor: pointer;
+    overflow: hidden; }
+    #sidebar-nav .sidebar-nav-item:first-child {
       border-top: 1px solid #2f2f2f; }
-    #sidebar-nav .sidebar-header.active {
+    #sidebar-nav .sidebar-nav-item.active {
       background-color: #2f2f2f; }
-    #sidebar-nav .sidebar-header > span {
+    #sidebar-nav .sidebar-nav-item > span {
       position: relative;
+      font-family: Gotham-Medium;
       z-index: 5; }
-    #sidebar-nav .sidebar-header .clickCircle {
+    #sidebar-nav .sidebar-nav-item .clickCircle {
       position: absolute;
       width: 30px;
       height: 30px;
@@ -43,14 +59,40 @@ body, html {
       z-index: 3; }
 
 #face {
-  position: relative;
+  position: fixed;
   width: 150px;
   height: 150px;
   top: 50px;
-  margin: auto;
-  border-radius: 85px;
+  left: 75px;
+  border-radius: 50%;
   border: 5px solid #2f2f2f;
   background: url("/static/images/headshot.jpg");
-  background-size: contain; }
+  background-size: contain;
+  z-index: 100; }
+
+.container-footer {
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  bottom: 0;
+  color: white;
+  background-color: #E65F3E; }
+
+.sidebar-open {
+  margin-left: 300px !important; }
+
+.row-header {
+  background-color: #f0f0f0; }
+
+.row-header-alt {
+  margin-top: 75px;
+  color: #2f2f2f;
+  background-color: #E65F3E; }
+
+.row-section-alt {
+  background-color: #f7704f;
+  color: #262626; }
+  .row-section-alt .standout {
+    color: white; }
 
 /*# sourceMappingURL=beta.css.map */

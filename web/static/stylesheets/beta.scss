@@ -1,17 +1,30 @@
 // colors
-$primary:  #a00000;
+$primary:  #E65F3E;
 $secondary: #2f2f2f;
 $tertiary: #262626;
+$light-gray: #f0f0f0;
 
 // sizes n shit
 $sidebarWidth: 300px;
 
- @font-face {
+@font-face {
     font-family: Gotham-Medium;
     src: url("/static/fonts/Gotham-Medium.ttf");
- }
+}
 
-$bodyFontFamily: Gotham-Medium;
+@font-face {
+    font-family: Sentinel-Light;
+    src: url("/static/fonts/Sentinel-Light.ttf");
+}
+
+@font-face {
+     font-family: Sentinel-Medium;
+     src: url("/static/fonts/Sentinel-Medium.ttf");
+}
+
+$bodyFontFamily: Sentinel-Light;
+$headerFontFamily: Sentinel-Medium;
+$sideBarFontFamily: Gotham-Medium;
 
 // actual css stuffs now
 body, html {
@@ -19,30 +32,43 @@ body, html {
     margin: 0;
 }
 
+.standout {
+    color: $primary;
+}
+
+* {
+    font-family: $bodyFontFamily;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: $headerFontFamily !important;
+}
+
 #sidebar {
+    position: fixed;
     width: $sidebarWidth;
-    height: 1280px;
+    // height: 1280px; // set in beta.js
+    float: left;
     background-color: $tertiary;
 }
 
 #sidebar-nav {
-    position: relative;
-    width: 100%;
-    top: 100px;
-    overflow: scroll;
+    position: absolute;
+    width: $sidebarWidth;
+    bottom: 0;
 
-    .sidebar-header {
+    .sidebar-nav-item {
         position: relative;
-        height: 20px;
+        height: 60px;
         padding: 20px 0;
         text-align: center;
         border-bottom: 1px solid $secondary;
         color: #fff;
-        font-family: $bodyFontFamily;
         font-size: 20px;
         letter-spacing: 5px;
-        overflow: hidden;
         cursor: pointer;
+        overflow: hidden;
 
         &:first-child {
             border-top: 1px solid $secondary;
@@ -54,6 +80,7 @@ body, html {
         
         & > span {
             position: relative;
+            font-family: $sideBarFontFamily;
             z-index: 5;
         }
 
@@ -69,15 +96,50 @@ body, html {
 }
 
 #face {
-    position: relative;
+    position: fixed;
     width: 150px;
     height: 150px;
     top: 50px;
-    margin: auto;
-    border-radius: 85px;
+    left: 75px;
+    border-radius: 50%;
     border: 5px solid $secondary;
     background: url('/static/images/headshot.jpg');
     background-size: contain;
+    z-index: 100;
 }
 
+.container-footer {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    color: white;
+    background-color: $primary;
+}
 
+.sidebar-open {
+    margin-left: 300px !important;
+}
+
+.row-header {
+    background-color: $light-gray;
+}
+
+.row-section {
+
+}
+
+.row-header-alt {
+    margin-top: 75px;
+    color: $secondary;
+    background-color: $primary;
+}
+
+.row-section-alt {
+    background-color: $primary + #111;
+    color: $tertiary;
+
+    & .standout {
+        color: white;
+    }
+}
