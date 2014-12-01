@@ -3,7 +3,7 @@ $primary:  #E65F3E;
 $secondary: #2f2f2f;
 $tertiary: #262626;
 $light-gray: #f0f0f0;
-
+   
 // sizes n shit
 $sidebarWidth: 300px;
 
@@ -126,11 +126,10 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .row-section {
-
+    padding-bottom: 75px;
 }
 
 .row-header-alt {
-    margin-top: 75px;
     color: $secondary;
     background-color: $primary;
 }
@@ -138,8 +137,47 @@ h1, h2, h3, h4, h5, h6,
 .row-section-alt {
     background-color: $primary + #111;
     color: $tertiary;
+    padding-bottom: 75px;
 
     & .standout {
         color: white;
     }
 }
+
+#nav-btn {
+    display: none;
+    width: 50px;
+    height: 50px;
+    background: url("/static/images/nav-btn.png") no-repeat;
+    background-size: contain;
+}
+
+/* some media queries */
+
+// TODO: add a variable $headerHeightMobile or something
+// $headerHeightMin = 150px;
+$headerPadding: 30px;
+
+@media screen and (max-width: 768px) {
+    #face {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        // top: ($headerHeightMin - 100) / 2
+        top: 25px;
+        left: $headerPadding;
+    }
+    
+    #nav-btn {
+        display: block;
+        position: absolute;
+        // top: ($headerHeightMin - 50) / 2
+        top: 50px;
+        right: $headerPadding;
+    }
+    
+    .container-fluid {
+        margin-top: 150px;
+    }
+}
+

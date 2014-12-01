@@ -84,15 +84,43 @@ h1, h2, h3, h4, h5, h6,
 .row-header {
   background-color: #f0f0f0; }
 
+.row-section {
+  padding-bottom: 75px; }
+
 .row-header-alt {
-  margin-top: 75px;
   color: #2f2f2f;
   background-color: #E65F3E; }
 
 .row-section-alt {
   background-color: #f7704f;
-  color: #262626; }
+  color: #262626;
+  padding-bottom: 75px; }
   .row-section-alt .standout {
     color: white; }
+
+#nav-btn {
+  display: none;
+  width: 50px;
+  height: 50px;
+  background: url("/static/images/nav-btn.png") no-repeat;
+  background-size: contain; }
+
+/* some media queries */
+@media screen and (max-width: 768px) {
+  #face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    top: 25px;
+    left: 30px; }
+
+  #nav-btn {
+    display: block;
+    position: absolute;
+    top: 50px;
+    right: 30px; }
+
+  .container-fluid {
+    margin-top: 150px; } }
 
 /*# sourceMappingURL=beta.css.map */
