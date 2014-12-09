@@ -102,25 +102,35 @@ h1, h2, h3, h4, h5, h6,
   display: none;
   width: 50px;
   height: 50px;
-  background: url("/static/images/nav-btn.png") no-repeat;
+  background: url("/static/images/nav-btn.svg") no-repeat;
   background-size: contain; }
 
 /* some media queries */
 @media screen and (max-width: 768px) {
   #face {
     position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 25px;
+    width: 80px;
+    height: 80px;
+    border-width: 3px;
+    border-color: #3f3f3f;
+    top: 10px;
     left: 30px; }
 
   #nav-btn {
     display: block;
     position: absolute;
-    top: 50px;
-    right: 30px; }
+    top: 25px;
+    right: 30px;
+    cursor: pointer; }
+
+  #header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: #262626;
+    z-index: 100; }
 
   .container-fluid {
-    margin-top: 150px; } }
+    padding-top: 100px; } }
 
 /*# sourceMappingURL=beta.css.map */

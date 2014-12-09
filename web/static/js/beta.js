@@ -1,7 +1,8 @@
 (function () {
     
     var sidebarIsShown = true,
-        headerIsShown = false;
+        headerIsShown = false,
+        headerIsOpen = false;
 
     $(document).ready(function() {
         var winHeight = $(window).height(),
@@ -12,8 +13,10 @@
         // $('.content-full').css({ height: winHeight });
             
         $('.sidebar-nav-item').on('click', renderNavClick);
+        $('#nav-btn').on('click', renderHeaderClick);
         
         $(window).on('resize', renderPageLayout);
+        
         
         renderPageLayout();        
     });
@@ -26,6 +29,45 @@
             $('#sidebar').addClass('hide');
             $('#content').removeClass('sidebar-open');
         }
+    }
+    
+    function renderHeaderClick() {
+        console.warn('headerClick');
+        
+        if (!this.headerIsOpen) {
+            renderHeaderOpen();
+        } else {
+            renderHeaderClose();
+        }
+    }
+    
+    function renderHeaderOpen() {
+        var faceBtn = $('#face'),
+            navBtn = $('#nav-btn'),
+            winWidth = $(window).width(),
+            faceBtnWidth = parseInt(faceBtn.css('width'), 10),
+            faceAnimate = (winWidth - faceBtnWidth) / 2,
+            easing = 'linear';
+        
+        
+        faceBtn.animate({left: faceAnimate}, 200, easing);
+        navBtn.animate({right: 0 - faceAnimate}, 200, easing, function() {
+            // other animations here
+        });
+        
+        faceBtn.css({cursor: 'pointer'});
+        faceBtn.on('click', renderHeaderClose);
+    }
+    
+    function renderHeaderClose() {
+        var faceBtn = $('#face'),
+            navBtn = $('#nav-btn'),
+            easing = 'linear';
+        
+        faceBtn.css({cursor: 'default'});
+        
+        faceBtn.animate({left: 30}, 200, easing);
+        navBtn.animate({right: 30}, 200, easing);
     }
 
 
