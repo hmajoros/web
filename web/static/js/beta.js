@@ -2,11 +2,15 @@
     
     var sidebarIsShown = true,
         headerIsShown = false,
-        headerIsOpen = false;
+        headerIsOpen = false,
+        initPosY = 0;
 
     $(document).ready(function() {
         var winHeight = $(window).height(),
             winWidth = $(window).width();
+        
+        renderHeaderImage();
+        // $('#img1').css({ backgroundSize: winWidth - 300 });
 
         $('#sidebar').css({ height: winHeight });
         $('#sidebar-nav').css({ height: winHeight - 10 - 250 }); // TODO: give these numbers names
@@ -14,12 +18,35 @@
         $('.sidebar-nav-item').on('click', renderSidebarClick);
         $('#nav-btn').on('click', renderHeaderOpen);
         $(window).on('resize', renderPageLayout);
+        $(document).on('scroll', renderImageScroll);
 
         renderPageLayout();        
     });
 
+    function renderHeaderImage() {
+        var xPosBg = $(window).width() - 300,
+            yPosBg = 60 - (xPosBg / 5);
+            
+        if (xPosBg <= 515) {
+            yPosBg = 0;
+        }
+
+        $('#img1').css({
+            backgroundSize: xPosBg,
+            backgroundPositionY: yPosBg
+        });
+
+        initYPos = yPosBg;
+    }
+
+    function renderImageScroll() {
+        var scroll = $(document).scrollTop();
+        $('#img1').css({ backgroundPositionY: initYPos -0.75 * scroll }); 
+    }
+
     function renderPageLayout() {
         if ($(window).width() > 768) {
+            renderHeaderImage();
             renderSidebarLayout();
         } else {
             renderHeaderLayout();

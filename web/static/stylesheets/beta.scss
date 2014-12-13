@@ -205,6 +205,18 @@ h1, h2, h3, h4, h5, h6,
     }
 }
 
+
+.row-img {
+    height: 300px;
+    overflow: hidden;
+    background-image: url('/static/images/photos/lakeside.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; // gets changed in js
+    background-attachment: fixed;
+    background-position-x: $sidebarWidth;
+    background-position-y: -100px;
+}
+
 /* some media queries */
 
 // TODO: add a variable $headerHeightMobile or something
