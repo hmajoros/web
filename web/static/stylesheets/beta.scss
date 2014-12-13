@@ -1,7 +1,7 @@
 // colors
 $primary:  #E65F3E;
-$primaryDark: #2f2f2f;
-$secondaryDark: #262626;
+$primaryDark: #262626;
+$secondaryDark: #2f2f2f;
 $tertiaryDark: #3f3f3f;
 $lightGray: #f0f0f0;
    
@@ -46,52 +46,61 @@ h1, h2, h3, h4, h5, h6,
     font-family: $headerFontFamily !important;
 }
 
-#sidebar {
-    position: fixed;
-    width: $sidebarWidth;
-    // height: 1280px; // set in beta.js
-    float: left;
-    background-color: $secondaryDark;
+@media screen and (max-width: 768px) {
+    #sidebar {
+        display: none;
+    }
 }
 
-#sidebar-nav {
-    position: absolute;
-    width: $sidebarWidth;
-    bottom: 0;
 
-    .sidebar-nav-item {
-        position: relative;
-        height: 60px;
-        padding: 20px 0;
-        text-align: center;
-        border-bottom: 1px solid $primaryDark;
-        color: #fff;
-        font-size: 20px;
-        letter-spacing: 5px;
-        cursor: pointer;
-        overflow: hidden;
+@media screen and (min-width: 769px) {
+    #sidebar {
+        position: fixed;
+        width: $sidebarWidth;
+        // height: 1280px; // set in beta.js
+        float: left;
+        background-color: $primaryDark;
+    }
 
-        &:first-child {
-            border-top: 1px solid $primaryDark;
-        }
+    #sidebar-nav {
+        position: absolute;
+        width: $sidebarWidth;
+        bottom: 0;
 
-        &.active {
-            background-color: $primaryDark;
-        }
-        
-        & > span {
+        .sidebar-nav-item {
             position: relative;
-            font-family: $sideBarFontFamily;
-            z-index: 5;
-        }
+            height: 60px;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid $secondaryDark;
+            color: #fff;
+            font-size: 20px;
+            letter-spacing: 5px;
+            cursor: pointer;
+            overflow: hidden;
 
-        & .clickCircle {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-color: $primaryDark;
-            border-radius: 50%;
-            z-index: 3;
+            &:first-child {
+                border-top: 1px solid $secondaryDark;
+            }
+
+            &.active {
+                background-color: $secondaryDark;
+            }
+
+            & > span {
+                position: relative;
+                font-family: $sideBarFontFamily;
+                z-index: 5;
+            }
+
+            & .clickCircle {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                background-color: $secondaryDark;
+                border-radius: 50%;
+                z-index: 3;
+            }
         }
     }
 }
@@ -103,10 +112,10 @@ h1, h2, h3, h4, h5, h6,
     top: 50px;
     left: 75px;
     border-radius: 50%;
-    border: 5px solid $primaryDark;
+    border: 5px solid $secondaryDark;
     background: url('/static/images/headshot.jpg');
     background-size: contain;
-    z-index: 100;
+    z-index: 101;
 }
 
 .container-footer {
@@ -131,13 +140,13 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .row-header-alt {
-    color: $primaryDark;
+    color: $secondaryDark;
     background-color: $primary;
 }
 
 .row-section-alt {
     background-color: $primary + #111;
-    color: $secondaryDark;
+    color: $primaryDark;
     padding-bottom: 75px;
 
     & .standout {
@@ -147,10 +156,53 @@ h1, h2, h3, h4, h5, h6,
 
 #nav-btn {
     display: none;
-    width: 50px;
-    height: 50px;
-    background: url("/static/images/nav-btn2.png") no-repeat;
-    background-size: contain;
+    & .fa {
+        font-size: 50px;
+        transition: color 0.25s;
+
+        &:hover {
+            transition: color 0.5s;
+            color: $primary;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    #header-nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #header-nav {
+        position: fixed;
+        width: 100%;
+        margin-top: 100px;
+        background-color: $primaryDark;
+        text-align: center;
+
+        & .header-nav-item {
+            color: white;
+            height: 51px;
+            font-size: 14px;
+            letter-spacing: 3px;
+            cursor: pointer;
+            padding: 18px;
+            border-bottom: 1px solid $secondaryDark;
+
+            &:hover {
+                background-color: darken($tertiaryDark, 5%);
+            }
+
+            &:first-child {
+                border-top: 1px solid $secondaryDark;
+            }
+
+            & > span {
+                font-family: $sideBarFontFamily; // TODO: change this variable name
+            }
+        }
+    }
 }
 
 /* some media queries */
@@ -161,30 +213,37 @@ $headerPadding: 30px;
 
 @media screen and (max-width: 768px) {
     #face {
-        position: absolute;
         width: 80px;
         height: 80px;
         // top: ($headerHeightMin - 100) / 2
         border-width: 3px;
-        border-color: $tertiaryDark;
         top: 10px;
         left: $headerPadding;
+
+        &.face-hover {
+            transition: border-color .5s;
+            &:hover {
+                border-color: $primary;
+                transition: border-color .5s;
+            }
+        }
     }
     
     #nav-btn {
+        position: fixed;
         display: block;
-        position: absolute;
         // top: ($headerHeightMin - 50) / 2
         top: 25px;
         right: $headerPadding;
         cursor: pointer;
+        z-index: 101;
     }
     
     #header {
         position: fixed;
         width: 100%;
         height: 100px;
-        background-color: $secondaryDark;
+        background-color: $primaryDark;
         z-index: 100;
     }
     

@@ -21,43 +21,46 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: Sentinel-Medium !important; }
 
-#sidebar {
-  position: fixed;
-  width: 300px;
-  float: left;
-  background-color: #262626; }
+@media screen and (max-width: 768px) {
+  #sidebar {
+    display: none; } }
+@media screen and (min-width: 769px) {
+  #sidebar {
+    position: fixed;
+    width: 300px;
+    float: left;
+    background-color: #262626; }
 
-#sidebar-nav {
-  position: absolute;
-  width: 300px;
-  bottom: 0; }
-  #sidebar-nav .sidebar-nav-item {
-    position: relative;
-    height: 60px;
-    padding: 20px 0;
-    text-align: center;
-    border-bottom: 1px solid #2f2f2f;
-    color: #fff;
-    font-size: 20px;
-    letter-spacing: 5px;
-    cursor: pointer;
-    overflow: hidden; }
-    #sidebar-nav .sidebar-nav-item:first-child {
-      border-top: 1px solid #2f2f2f; }
-    #sidebar-nav .sidebar-nav-item.active {
-      background-color: #2f2f2f; }
-    #sidebar-nav .sidebar-nav-item > span {
+  #sidebar-nav {
+    position: absolute;
+    width: 300px;
+    bottom: 0; }
+    #sidebar-nav .sidebar-nav-item {
       position: relative;
-      font-family: Gotham-Medium;
-      z-index: 5; }
-    #sidebar-nav .sidebar-nav-item .clickCircle {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      background-color: #2f2f2f;
-      border-radius: 50%;
-      z-index: 3; }
-
+      height: 60px;
+      padding: 20px 0;
+      text-align: center;
+      border-bottom: 1px solid #2f2f2f;
+      color: #fff;
+      font-size: 20px;
+      letter-spacing: 5px;
+      cursor: pointer;
+      overflow: hidden; }
+      #sidebar-nav .sidebar-nav-item:first-child {
+        border-top: 1px solid #2f2f2f; }
+      #sidebar-nav .sidebar-nav-item.active {
+        background-color: #2f2f2f; }
+      #sidebar-nav .sidebar-nav-item > span {
+        position: relative;
+        font-family: Gotham-Medium;
+        z-index: 5; }
+      #sidebar-nav .sidebar-nav-item .clickCircle {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: #2f2f2f;
+        border-radius: 50%;
+        z-index: 3; } }
 #face {
   position: fixed;
   width: 150px;
@@ -68,7 +71,7 @@ h1, h2, h3, h4, h5, h6,
   border: 5px solid #2f2f2f;
   background: url("/static/images/headshot.jpg");
   background-size: contain;
-  z-index: 100; }
+  z-index: 101; }
 
 .container-footer {
   position: fixed;
@@ -99,29 +102,59 @@ h1, h2, h3, h4, h5, h6,
     color: white; }
 
 #nav-btn {
-  display: none;
-  width: 50px;
-  height: 50px;
-  background: url("/static/images/nav-btn2.png") no-repeat;
-  background-size: contain; }
+  display: none; }
+  #nav-btn .fa {
+    font-size: 50px;
+    transition: color 0.25s; }
+    #nav-btn .fa:hover {
+      transition: color 0.5s;
+      color: #E65F3E; }
 
+@media screen and (min-width: 769px) {
+  #header-nav {
+    display: none; } }
+@media screen and (max-width: 768px) {
+  #header-nav {
+    position: fixed;
+    width: 100%;
+    margin-top: 100px;
+    background-color: #262626;
+    text-align: center; }
+    #header-nav .header-nav-item {
+      color: white;
+      height: 51px;
+      font-size: 14px;
+      letter-spacing: 3px;
+      cursor: pointer;
+      padding: 18px;
+      border-bottom: 1px solid #2f2f2f; }
+      #header-nav .header-nav-item:hover {
+        background-color: #323232; }
+      #header-nav .header-nav-item:first-child {
+        border-top: 1px solid #2f2f2f; }
+      #header-nav .header-nav-item > span {
+        font-family: Gotham-Medium; } }
 /* some media queries */
 @media screen and (max-width: 768px) {
   #face {
-    position: absolute;
     width: 80px;
     height: 80px;
     border-width: 3px;
-    border-color: #3f3f3f;
     top: 10px;
     left: 30px; }
+    #face.face-hover {
+      transition: border-color .5s; }
+      #face.face-hover:hover {
+        border-color: #E65F3E;
+        transition: border-color .5s; }
 
   #nav-btn {
+    position: fixed;
     display: block;
-    position: absolute;
     top: 25px;
     right: 30px;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 101; }
 
   #header {
     position: fixed;
