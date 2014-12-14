@@ -1,7 +1,6 @@
 (function () {
     
-    var sidebarIsShown = true,
-        headerIsShown = false,
+    var fullLayout = true, // two stages, full or small. represented by boolean
         headerIsOpen = false,
         initPosY = 0;
 
@@ -10,12 +9,12 @@
             winWidth = $(window).width();
         
         renderHeaderImage();
-        // $('#img1').css({ backgroundSize: winWidth - 300 });
 
         $('#sidebar').css({ height: winHeight });
         $('#sidebar-nav').css({ height: winHeight - 10 - 250 }); // TODO: give these numbers names
             
         $('.sidebar-nav-item').on('click', renderSidebarClick);
+        $('.header-nav-item').on('click', renderHeaderClick);
         $('#nav-btn').on('click', renderHeaderOpen);
         $(window).on('resize', renderPageLayout);
         $(document).on('scroll', renderImageScroll);
@@ -50,8 +49,10 @@
         if ($(window).width() > 768) {
             renderHeaderImage();
             renderSidebarLayout();
+            fullLayout = true;
         } else {
             renderHeaderLayout();
+            fullLayout = false;
         }
     }
 
@@ -126,7 +127,17 @@
             faceBtn.removeClass('face-hover');
         });
 
+        faceBtn.off();
+
         headerIsOpen = false;
+    }
+
+    function renderHeaderClick() {
+        var data = $(this).data('scroll');
+        
+        renderHeaderClose();
+
+        scrollToPage(data);
     }
 
 
@@ -134,7 +145,8 @@
         var xPos = ev.pageX - $(this).offset().left, 
             yPos = ev.pageY - $(this).offset().top,
             r = 30 / 2, // initial circle diameter is 30
-            self = $(this);
+            self = $(this),
+            data = self.data('scroll');
 
         $('.active').removeClass('active');
 
@@ -152,6 +164,20 @@
             self.addClass('active');
         });
 
+        scrollToPage(data);
+    }
+
+    function scrollToPage(page) {
+        scrollPos = page ? $('#section' + page).offset().top : 0;
+
+
+        if (!fullLayout && page) {
+            console.warn('hits');
+            scrollPos -= 100;
+        }
+        $('html, body').animate({
+            scrollTop: scrollPos
+        }, 300);
     }
 
 })();
