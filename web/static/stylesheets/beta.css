@@ -134,16 +134,19 @@ h1, h2, h3, h4, h5, h6,
         border-top: 1px solid #2f2f2f; }
       #header-nav .header-nav-item > span {
         font-family: Gotham-Medium; } }
-.row-img {
-  height: 300px;
-  overflow: hidden;
-  background-image: url("/static/images/photos/lakeside.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position-x: 300px;
-  background-position-y: -100px; }
-
+@media screen and (max-width: 768px) {
+  .row-img {
+    display: none; } }
+@media screen and (min-width: 769px) {
+  .row-img {
+    height: 300px;
+    overflow: hidden;
+    background-image: url("/static/images/photos/lakeside.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position-x: 300px;
+    background-position-y: -100px; } }
 /* some media queries */
 @media screen and (max-width: 768px) {
   #face {

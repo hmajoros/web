@@ -41,7 +41,9 @@
 
     function renderImageScroll() {
         var scroll = $(document).scrollTop();
-        $('#img1').css({ backgroundPositionY: initYPos -0.75 * scroll }); 
+        if (scroll >= 0) {
+            $('#img1').css({ backgroundPositionY: initYPos -0.75 * scroll }); 
+        }
     }
 
     function renderPageLayout() {
