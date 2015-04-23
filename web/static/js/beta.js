@@ -69,6 +69,7 @@
         headerIsOpen = false;
 
         changeToPage(data);
+        updateSidebar(data);
     }
 
     function randomizeBackgrounds() {
@@ -159,6 +160,7 @@
         });
 
         changeToPage(data);
+        updateHeader(data);
     }
 
     function changeToPage(pageID) {
@@ -179,11 +181,16 @@
         });
 
         // TODO: slide in from left/right for each new section???
-
-        console.warn(curr);
-        console.warn(next);
     }
 
+    function updateHeader(pageID) {
+        $('.header-nav-item.active').removeClass('active');
+        $('.header-nav-item[data-scroll="' + pageID + '"]').addClass('active');
+    }
 
+    function updateSidebar(pageID) {
+        $('.sidebar-nav-item.active').removeClass('active');
+        $('.sidebar-nav-item[data-scroll="' + pageID + '"]').addClass('active');
+    }
 
 })();
