@@ -28,7 +28,7 @@
         line-height: 25px;
         color: white;
         font-family: 'Helvetica Neue', Arial, sans-serif;
-        font-weight: 100;
+        font-weight: 200;
         text-transform: uppercase;
         letter-spacing: 2px;
         display: inline-block;
@@ -37,7 +37,7 @@
     & h4:before, h4:after {
         content: "";
         position: absolute;
-        width: 40px;
+        width: 20px;
         height: 1px;
         top: 12px;
         border-top: 1px dashed white;
@@ -70,10 +70,6 @@
         & h4:first-of-type {
             margin-top: 65px;
         }
-
-        & h4:before, h4:after {
-            width: 100px;
-        }
     }
 }
 
@@ -81,6 +77,15 @@
     .cover-img {
         margin-left: $sidebarWidth;
         margin-top: 0;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .cover-img {
+
+        & h4:before, h4:after {
+            width: 100px;
+        }
     }
 }
 
