@@ -1,4 +1,6 @@
 (function () {
+
+    var curPageID = 0; // "index"
     
     $(document).ready(function() {
         var winHeight = $(window).height(),
@@ -28,8 +30,7 @@
             header = $('.header-nav'),
             winWidth = $(window).width(),
             faceBtnWidth = parseInt(faceBtn.css('width'), 10),
-            faceAnimate = (winWidth - faceBtnWidth) / 2,
-            easing = 'linear';
+            faceAnimate = (winWidth - faceBtnWidth) / 2;
         
         
         faceBtn.animate({left: faceAnimate}, 200);
@@ -50,7 +51,8 @@
         var faceBtn = $('.face-header'),
             navBtn = $('.nav-btn'),
             header = $('.header-nav'),
-            easing = 'linear';
+            easing = 'linear',
+            data = $(this).data('scroll');
         
         faceBtn.css({cursor: 'default'});
         // faceBtn.removeClass('face-hover');
@@ -63,10 +65,10 @@
             });
         });
 
-
         faceBtn.off();
-
         headerIsOpen = false;
+
+        changeToPage(data);
     }
 
     function randomizeBackgrounds() {
@@ -156,7 +158,30 @@
             self.addClass('active');
         });
 
-        // scrollToPage(data);
+        changeToPage(data);
+    }
+
+    function changeToPage(pageID) {
+        if (curPageID === pageID) return;
+
+        var curr = $('#section' + curPageID),
+            next = $('#section' + pageID);
+
+        curr.animate({ opacity: 0 }, 250, function() {
+            next.css({ opacity: 0 });
+            next.removeClass('hide');
+            curr.addClass('hide');
+
+            next.animate({ opacity: 1 }, 250, function() {
+                curPageID = pageID;
+            });
+        
+        });
+
+        // TODO: slide in from left/right for each new section???
+
+        console.warn(curr);
+        console.warn(next);
     }
 
 

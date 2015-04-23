@@ -4,7 +4,7 @@
 .shadow-1 {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
 
-.shadow-2, .flat-container-left, .flat-container-right {
+.shadow-2, .info-cnt, .info-cnt .cnt-hdr, .flat-container-left, .flat-container-right {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
 
 .shadow-3, .flat-container-left:hover, .flat-container-right:hover {
@@ -24,18 +24,16 @@
   bottom: 0;
   right: 0;
   border-radius: 50%;
-  background-color: #BF4068;
+  background-color: #d32f2f;
   margin: 16px;
   font-size: 32px;
   line-height: 48px;
   color: white;
   cursor: pointer;
   transition: all .2s;
-  font-weight: 400;
-  box-shadow: none; }
+  font-weight: 400; }
   .button-circle:hover, .info-cnt .cnt-body .btn-more:hover, .info-cnt .cnt-body .btn-less:hover {
     transition: all .2s;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2), 0 -5px 15px rgba(0, 0, 0, 0.2);
     transform: rotate(180deg); }
 
 /* container for projects */
@@ -47,7 +45,7 @@
   margin-top: 32px; }
   .info-cnt .cnt-hdr {
     height: 64px;
-    background-color: #BF4068;
+    background-color: #d32f2f;
     background-size: cover;
     font-size: 24px;
     font-weight: 700;
@@ -150,6 +148,16 @@
 
 .section-right {
   float: right; }
+
+@media screen and (min-width: 992px) and (max-width: 1100px) {
+  .text-desc {
+    font-size: 14px !important; } }
+.content {
+  padding: 0; }
+
+.row {
+  margin-left: 0;
+  margin-right: 0; }
 
 @media screen and (max-width: 768px) {
   /* hide stuff from desktop view */
@@ -372,7 +380,7 @@
 @media screen and (min-width: 500px) {
   .cover-img h1 {
     height: 70px;
-    font-size: 55px;
+    font-size: 50px;
     line-height: 70px; }
   .cover-img h4:first-of-type {
     margin-top: 65px; }
@@ -382,7 +390,7 @@
   .cover-img {
     margin-left: 320px;
     margin-top: 0; } }
-@media screen and (min-width: 1070px) {
+@media screen and (min-width: 1100px) {
   .cover-img {
     height: 350px; }
     .cover-img h1 {
@@ -406,15 +414,22 @@
       margin-right: 21px; }
     .cover-img h4:after {
       margin-left: 16px; } }
+.photo {
+  width: 100%;
+  margin-bottom: 16px; }
+
 .standout {
-  color: #BF4068; }
+  color: #d32f2f; }
+
+.condensed {
+  font-family: 'Roboto Condensed'; }
 
 * {
   font-family: Roboto, serif;
   -webkit-font-smoothing: antialiased; }
 
 .row-section, .row-section-alt {
-  padding: 32px 0; }
+  padding: 32px 16px; }
 
 .row-header-alt {
   background-color: #e53935;

@@ -5,9 +5,11 @@
     height: 256px;
     margin: 0 auto;
     margin-top: 32px;
+    @extend .shadow-2;
+
     .cnt-hdr {
         height: 64px;
-        background-color: $primary;
+        background-color: $md-red-700;
         background-size: cover;
         font-size: 24px;
         font-weight: 700;
@@ -17,6 +19,7 @@
         margin-right: -5px;
         margin-left: -5px;
         color: white;
+        @extend .shadow-2;
     }
     .cnt-body {
         position: relative;
@@ -149,4 +152,10 @@
 
 .section-right { 
     float: right;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1100px) {
+    .text-desc {
+        font-size: 14px !important;
+    }
 }

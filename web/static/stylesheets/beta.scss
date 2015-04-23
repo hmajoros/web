@@ -4,6 +4,15 @@
 @import "buttons";
 @import "components";
 
+.content {
+    padding: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 @media screen and (max-width: 768px) {
     @import "headernav";
 }
@@ -15,8 +24,18 @@
 @import "cover";
 
 // actual css stuffs now
+
+.photo {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
 .standout {
-    color: $primary;
+    color: $md-red-700;
+}
+
+.condensed {
+    font-family: 'Roboto Condensed';
 }
 
 * {
@@ -25,7 +44,7 @@
 }
 
 .row-section, .row-section-alt {
-    padding: 32px 0;
+    padding: 32px 16px;
 }
 
 .row-header-alt {
