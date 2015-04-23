@@ -329,7 +329,8 @@
   margin-top: 100px;
   background: url("../images/bridgedark.jpg") no-repeat;
   background-size: cover;
-  background-position: 50% 0; }
+  background-position: 50% 0;
+  overflow: hidden; }
   .cover-img h1 {
     height: 50px;
     margin: 0;
@@ -374,14 +375,13 @@
     font-size: 55px;
     line-height: 70px; }
   .cover-img h4:first-of-type {
-    margin-top: 65px; } }
+    margin-top: 65px; }
+  .cover-img h4:before, .cover-img h4:after {
+    width: 50px; } }
 @media screen and (min-width: 769px) {
   .cover-img {
     margin-left: 320px;
     margin-top: 0; } }
-@media screen and (min-width: 850px) {
-  .cover-img h4:before, .cover-img h4:after {
-    width: 100px; } }
 @media screen and (min-width: 1070px) {
   .cover-img {
     height: 350px; }
@@ -400,6 +400,7 @@
     .cover-img h4:first-of-type {
       margin-top: 95px; }
     .cover-img h4:before, .cover-img h4:after {
+      width: 100px;
       top: 14px; }
     .cover-img h4:before {
       margin-right: 21px; }
