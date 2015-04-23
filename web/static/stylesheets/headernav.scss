@@ -1,0 +1,134 @@
+/* hide stuff from desktop view */
+.sidebar {
+    display: none;
+}
+
+.content {
+    margin-left: 0;
+}
+
+/* begin mobile styles */
+.nav-btn {
+    position: fixed;
+    display: block;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    right: 0;
+    z-index: 101;
+    transition: background-color .3s;
+    
+    & .fa {
+        padding-left: 34px;
+        padding-top: 34px;
+        font-size: 32px;
+    }
+
+    &:hover {
+        transition: background-color .3s;
+        background-color: darken($primaryDark, 2%);
+    }
+}
+
+$headerPadding: 30px;
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    top: 0;
+    background-color: $primaryDark;
+    z-index: 100;
+    border-bottom: 1px dashed $secondaryDark;
+}
+
+.face-header {
+    position: fixed;
+    border-radius: 50%;
+    border: 3px solid $secondaryDark;
+    background: url('../images/face.jpg');
+    background-size: contain;
+
+    width: 80px;
+    height: 80px;
+    top: 10px;
+    left: $headerPadding;
+    z-index: 101;
+
+    &.face-hover {
+        transition: border-color .3s;
+        &:hover {
+            border-color: $md-red-700;
+            transition: border-color .3s;
+        }
+    }
+}
+
+.row-header, .row-header-alt {
+    border: none;
+
+    & h1, & h2 {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 24px;
+        line-height: 32px;
+        letter-spacing: 7px;
+    }
+}
+
+.row-header {
+    background-color: $primaryDark;
+    color: white; 
+}
+
+.row-header-alt {
+    background-color: $md-red-500;
+    color: white;
+}
+
+.row-header-alt {
+
+}
+
+.header-nav {
+    position: fixed;
+    width: 100%;
+    margin-top: 100px;
+    background-color: $primaryDark;
+    text-align: center;
+    z-index: 90;
+
+    & .header-nav-item {
+        height: 51px;
+        font-size: 14px;
+        letter-spacing: 3px;
+        cursor: pointer;
+        padding: 18px;
+        border-bottom: 1px dashed $secondaryDark;
+        z-index: 91;
+
+        &:hover {
+            background-color: darken($tertiaryDark, 5%);
+        }
+
+        &:first-child {
+            border-top: none;
+        }
+
+        &.active {
+            background-color: $secondaryDark;
+        }
+
+        & > span {
+            display: inline-block;
+            width: 100%;
+            height: 50px;
+            font-family: $mainFontFamily; // TODO: change this variable name
+            z-index: 92;
+            color: white;
+            text-decoration: none;
+            line-height: 50px;
+            margin-top: -18px;
+        }
+    }
+}
