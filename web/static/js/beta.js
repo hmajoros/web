@@ -3,8 +3,7 @@
     var curPageID = 0; // "index"
     
     $(document).ready(function() {
-        var winHeight = $(window).height(),
-            winWidth = $(window).width();
+        renderCoverImage();
             
         $('.header-nav-item').on('click', renderHeaderClose);
         $('.nav-btn').on('click', renderHeaderOpen);
@@ -14,9 +13,19 @@
         $(window).on('resize', renderPageLayout);
 
         renderPageLayout();
-        randomizeBackgrounds();
       
     });
+
+    function renderCoverImage() {
+        $('<img/>').attr('src', '/static/images/bridgedark.jpg').load(function() {
+            $(this).remove(); // to prevent a memory leak
+            $('.cover-img').css({ backgroundImage : 'url(/static/images/bridgedark.jpg)' });
+            
+            setTimeout(function() {
+                $('#covertext').animate({ opacity: 1 }, 1000);
+            }, 250);  
+        });  
+    }
 
     function renderPageLayout() {
         var height = $(window).height();
@@ -38,6 +47,8 @@
             header.css({ marginTop: -500 });
             header.removeClass('hide');
             header.animate({ marginTop: 0 }, 200);
+            $('body').on('click', renderHeaderClose);
+            $(document).keyup(bindEscapeKey)
         });
 
         faceBtn.css({cursor: 'pointer'});
@@ -45,6 +56,12 @@
         faceBtn.on('click', renderHeaderClose);
 
         headerIsOpen = true;
+    }
+
+    function bindEscapeKey(e) {
+        if (e.keyCode === 27) {
+            renderHeaderClose();
+        }
     }
     
     function renderHeaderClose() {
@@ -66,19 +83,12 @@
         });
 
         faceBtn.off();
+        $('body').off();
+        $(document).unbind('keyup', bindEscapeKey);
         headerIsOpen = false;
 
         changeToPage(data);
         updateSidebar(data);
-    }
-
-    function randomizeBackgrounds() {
-        $('.class-title').each(function() {
-            var rand = Math.floor(Math.random() * 100) + 1;
-            rand = rand + '%';
-            console.warn(rand);
-            $(this).css({ backgroundPositionY: rand });
-        });
     }
 
     function clickCircleTest() {
@@ -164,7 +174,7 @@
     }
 
     function changeToPage(pageID) {
-        if (curPageID === pageID) return;
+        if (pageID === undefined || curPageID === pageID) return;
 
         var curr = $('#section' + curPageID),
             next = $('#section' + pageID);

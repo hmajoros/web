@@ -39,6 +39,8 @@ header, .header-nav {
         bottom: 0;
         // top: 320px;
 
+        overflow: auto;
+
         .sidebar-nav-item {
             position: relative;
             height: 60px;

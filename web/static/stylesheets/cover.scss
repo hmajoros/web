@@ -1,7 +1,12 @@
+#covertext {
+    opacity: 0; // start at 0, fade in on load
+}
+
 .cover-img {
     height: 250px;
     margin-top: 100px;
-    background: url('../images/bridgedark.jpg') no-repeat;
+    background-color: $md-grey-700;
+    // background: url('../images/bridgedark.jpg') no-repeat; // SET IN JS
     background-size: cover;
     background-position: 50% 0;
     overflow: hidden;
