@@ -89,11 +89,6 @@
   background-image: url("https://unsplash.imgix.net/photo-1413920346627-a4389f0abd61?q=75&fm=jpg&s=cfd43f65c77577abb3bf29c0d6a0775f") !important;
   background-position-y: -25px; }
 
-.full-image {
-  width: 100%;
-  margin-bottom: 16px;
-  margin-top: 16px; }
-
 /* conatiner for classes + skills */
 .flat-container-left, .flat-container-right {
   width: 100%;
@@ -152,6 +147,25 @@
 @media screen and (min-width: 992px) and (max-width: 1100px) {
   .text-desc {
     font-size: 14px !important; } }
+.photo {
+  height: 200px;
+  width: 100%;
+  margin-bottom: 8px;
+  background-size: cover; }
+  .photo:hover .photo-text {
+    opacity: .8; }
+
+.photo-text {
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  opacity: 0;
+  background-color: #212121;
+  color: white;
+  text-align: center; }
+  .photo-text > .fa {
+    font-size: 32px; }
+
 .content {
   padding: 0; }
 
@@ -177,10 +191,13 @@
     right: 0;
     z-index: 101;
     transition: background-color .3s; }
-    .nav-btn .fa {
-      padding-left: 34px;
-      padding-top: 34px;
-      font-size: 32px; }
+    .nav-btn .icon {
+      width: 48px;
+      display: block;
+      margin: auto;
+      font-size: 48px;
+      line-height: 100px;
+      text-align: center; }
     .nav-btn:hover {
       transition: background-color .3s;
       background-color: #212121; }
@@ -418,10 +435,6 @@
       margin-right: 21px; }
     .cover-img h4:after {
       margin-left: 16px; } }
-.photo {
-  width: 100%;
-  margin-bottom: 16px; }
-
 .standout {
   color: #d32f2f; }
 
@@ -465,7 +478,7 @@
   .social-icon a {
     text-decoration: none;
     text-align: center; }
-  .social-icon .fa {
+  .social-icon .icon {
     font-size: 20px;
     line-height: 32px;
     color: white; }

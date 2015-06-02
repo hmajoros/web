@@ -18,10 +18,13 @@
     z-index: 101;
     transition: background-color .3s;
     
-    & .fa {
-        padding-left: 34px;
-        padding-top: 34px;
-        font-size: 32px;
+    & .icon {
+        width: 48px;
+        display: block;
+        margin: auto;
+        font-size: 48px;
+        line-height: 100px;
+        text-align: center;
     }
 
     &:hover {
