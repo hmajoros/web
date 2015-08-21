@@ -1,0 +1,97 @@
+/* hide stuff from mobile view */
+header, .header-nav {
+    display: none;
+}
+
+.content {
+    margin-left: 320px;
+}
+
+/* begin styles for desktop */
+.row-header, .row-header-alt {
+    & h1, & h2 {
+        margin: 0;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 28px;
+        line-height: 64px;
+        letter-spacing: 2px;
+        margin-right: -2px;
+    }
+}
+
+.row-header {
+    background-color: #efefef;
+    color: black;
+    border-bottom: 1px dashed #cecece;
+}
+
+.sidebar {
+    position: fixed;
+    width: $sidebarWidth;
+    // height: 1280px; // set in beta.js
+    float: left;
+    background-color: $primaryDark;
+
+    .sidebar-nav {
+        position: absolute;
+        width: $sidebarWidth;
+        bottom: 0;
+        // top: 320px;
+
+        overflow: auto;
+
+        .sidebar-nav-item {
+            position: relative;
+            height: 60px;
+            text-align: center;
+            border-bottom: 1px solid $secondaryDark;
+           
+            cursor: pointer;
+            overflow: hidden;
+
+            &:first-child {
+                border-top: 1px solid $secondaryDark;
+            }
+
+            &.active {
+                background-color: $secondaryDark;
+            }
+
+            & > span {
+                display: block;
+                line-height: 60px;
+                color: #fff;
+                font-size: 20px;
+                letter-spacing: 4px;
+                margin-right: -4px;
+                position: relative;
+                z-index: 5;
+                font-weight: 700;
+                text-decoration: none;
+            }
+
+            & .clickCircle {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                background-color: $secondaryDark;
+                border-radius: 50%;
+                z-index: 3;
+            }
+        }
+    }
+}
+
+.face-sidebar {
+    position: fixed;
+    width: 160px;
+    height: 160px;
+    top: 50px;
+    left: 80px;
+    border-radius: 50%;
+    border: 5px solid $secondaryDark;
+    background: url('../images/face.jpg');
+    background-size: contain;
+    z-index: 101;
+}

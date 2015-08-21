@@ -1,0 +1,152 @@
+/* container for projects */
+.info-cnt {
+    width: 100%;
+    max-width: 500px;
+    height: 256px;
+    margin: 0 auto;
+    margin-top: 32px;
+    @extend .shadow-2;
+
+    .cnt-hdr {
+        height: 64px;
+        background-color: $md-red-700;
+        background-size: cover;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 64px;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        margin-right: -5px;
+        margin-left: -5px;
+        color: white;
+        @extend .shadow-2;
+    }
+    .cnt-body {
+        position: relative;
+        width: 100%;
+        height: 192px;
+        background-color: black; // default
+        background-image: url("https://ununsplash.imgix.net/uploads/1413259835094dcdeb9d3/6e609595?q=75&fm=jpg&s=6a4fc66161293fc4a43a6ca6f073d1c5");
+        background-size: cover;
+        overflow: hidden;
+
+        .main-text {
+            position: absolute; // for dumb z-index layering shit
+            width: 100%;
+            padding: 16px 80px 16px 16px;
+            color: white;
+            text-align: left;
+        }
+        
+        .btn-more {
+            @extend .button-circle;
+        }
+
+        .btn-less {
+            @extend .button-circle;
+            transform: rotate(45deg);
+            
+            &:hover {
+                transition: all .2s;
+                transform: rotate(225deg);
+            }
+        }
+        // .btn-view {
+        //     @extend .button-circle;
+        //     // background-color: $secondaryDark;
+        // }
+        .click-circle {
+            position: absolute;
+            width: 48px;
+            height: 48px;
+            bottom: 0;
+            right: 0;
+            border-radius: 50%;
+            margin: 16px;
+            background-color: $primaryDark;
+            opacity: .9;
+        }
+    }
+}
+
+.alt-image {
+    background-image: url("https://unsplash.imgix.net/photo-1413920346627-a4389f0abd61?q=75&fm=jpg&s=cfd43f65c77577abb3bf29c0d6a0775f") !important;
+    background-position-y: -25px;
+}
+
+/* conatiner for classes + skills */
+.flat-container-left, .flat-container-right {
+    width: 100%;
+    max-width: 450px;
+    height: 64px;
+    margin-bottom: 16px;
+    margin-left: auto;
+    margin-right: auto;
+    transition: all 250ms;
+    overflow: hidden; // precautionary measure, shouldn't need it
+    @extend .shadow-2;
+
+    .section-left, .section-right {
+        height: 64px;
+        width: 64px;
+        background-color: $md-red-300;
+    }
+
+    .text-desc {
+        height: 64px;
+        // margin-left: 64px;
+        line-height: 64px;
+        color: black;
+        font-size: 18px;
+        font-family: $mainFontFamily !important;
+        background-color: white;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+        @extend .shadow-3;
+    }
+}
+
+.flat-container-left .text-desc {
+    margin-left: 64px;
+}
+
+.flat-container-right .text-desc {
+    margin-right: 64px;
+}
+
+.text-main {
+    height: 40px;
+    padding-top: 12px;
+    line-height: 32px;
+    font-size: 30px;
+    font-family: $mainFontFamily !important;
+    font-weight: 700;
+    color: white;
+}
+
+.text-accent {
+    height: 20px;
+    line-height: 14px;
+    font-size: 14px;
+    font-family: $mainFontFamily !important;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-right: -1px; // to account for letter spacing
+    color: $primaryDark;
+}
+
+.section-left {
+    float: left;
+}
+
+.section-right { 
+    float: right;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1100px) {
+    .text-desc {
+        font-size: 14px !important;
+    }
+}

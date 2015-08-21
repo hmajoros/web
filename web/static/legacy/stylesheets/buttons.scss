@@ -1,0 +1,23 @@
+.button-circle {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    background-color: $md-red-700;
+    margin: 16px;
+    font-size: 32px;
+    line-height: 48px;
+    color: white;
+    cursor: pointer;
+    transition: all .2s;
+    font-weight: 400;
+
+    &:hover {
+        transition: all .2s;
+        transform: rotate(180deg);
+        // TODO: browser prefixes
+   
+    }
+}
