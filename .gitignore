@@ -7,6 +7,8 @@ design/*
 .DS_Store
 .sass-cache
 *.swp
+web/static/css/*.css
+web/static/css/*.css.map
 
 
 # Byte-compiled / optimized / DLL files

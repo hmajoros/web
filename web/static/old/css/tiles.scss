@@ -1,0 +1,219 @@
+[class^="col-"] {
+    // padding: 0 12px;
+}
+
+tile {
+    display: block;
+    height: 250px;
+    background-color: white;
+    margin-bottom: 24px;
+    padding: 24px;
+    box-shadow: 0 0px 3px rgba(0,0,0,0.16);
+    border-radius: 3px;
+}
+
+// .col-xs-1 > tile {
+//     height: 60px;
+// }
+
+.container .container {
+    margin-left: -15px;
+}
+
+/* tile for name and personal info */
+.tile-text {
+
+    height: auto;
+
+    & > h1 {
+        font-family: 'Abril Fatface';
+        font-size: 64px;
+        margin: 0 0 16px 0;
+    }
+
+    & > h4, & > p {
+        font-size: 24px;
+        margin: 4px 0;
+        font-weight: 100;
+        font-style: italic;
+    }
+
+    & > p {
+        font-size: 20px;
+    }
+
+    & > .btn {
+        @extend .btn-md-red;
+    }
+}
+
+/* tile for displaying information with an icon / image */
+.tile-split {
+    height: auto;
+    padding: 0;
+    transition: all $easeOutQuad 200ms;
+
+    & > a {
+        text-decoration: none;
+    }
+
+    &:hover {
+        @extend .shadow-3;
+    }
+
+    &.blue {
+        .icon { color: $md-blue-300; }
+        .upper { background-color: $md-blue-600; }
+        .lower { background-color: $md-blue-700; }
+    }
+
+    &.light-blue {
+        .icon { color: $md-light-blue-300; }
+        .upper { background-color: $md-light-blue-600; }
+        .lower { background-color: $md-light-blue-700; }
+    }
+
+    &.red {
+        .icon { color: $md-red-200; }
+        .upper { background-color: $md-red-600; }
+        .lower { background-color: $md-red-700; }
+
+    }
+
+    &.indigo {
+        .icon { color: $md-indigo-200; }
+        .upper { background-color: $md-indigo-600; }
+        .lower { background-color: $md-indigo-700; }
+    }
+
+    &.green {
+        .icon { color: $md-green-300; }
+        .upper { background-color: $md-green-600; }
+        .lower { background-color: $md-green-700; }
+    }
+
+    &.teal {
+        .icon { color: $md-teal-300; }
+        .upper { background-color: $md-teal-600; }
+        .lower { background-color: $md-teal-700; }
+    }
+
+    &.amber {
+        .icon { color: $md-amber-300; }
+        .upper { background-color: $md-amber-600; }
+        .lower { background-color: $md-amber-700; }
+    }
+
+    &.white {
+        .lower > h4,
+        .lower > p { 
+            color: $md-grey-800;
+        }
+    }
+}
+
+section.upper {
+    height: auto;
+    padding: 24px 0;
+    border-radius: 3px 3px 0 0;
+    // background-color: $md-blue-600;
+
+    & .icon {
+        display: block;
+        font-size: 100px;
+        // color: $md-blue-300;
+        text-align: center;
+    }
+}
+
+section.upper-image {
+    height: 262.5px;
+    background-image: url('../images/water.JPG');
+    background-size: cover;
+    border-radius: 3px 3px 0 0;
+
+    & nav {
+        position: absolute;
+        width: 54px; // this number just works... 
+        top: 230px;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        & .icon {
+            margin: 0 2px;
+            color: rgba(255,255,255,0.40);
+        }
+
+        & .icon.active {
+            color: rgba(255,255,255,0.87);
+        }
+    }
+}
+
+section.lower {
+    height: auto;
+    padding: 16px;
+    border-radius: 0 0 3px 3px;
+    
+
+    & > h4 {
+        font-weight: 100;
+        font-style: italic;
+        font-size: 24px;
+        margin: 0 0 8px 0;
+        color: white;
+    }
+
+    & > p {
+        font-weight: 300;
+        color: white;
+        margin: 0;
+    }
+}
+
+/* tile for social icons */
+$facebook: #3b5998;
+$twitter: #00aced;
+$linkedin: #007bb6;
+$gmail: #dd4b39;
+$github: $md-grey-800;
+$instagram: #517fa4;
+
+.tile-social {
+    height: 67.5px;
+    padding: 0;
+
+    & .icon {
+        height: 67.5px;
+        display: block;
+        line-height: 67.5px;
+        font-size: 40px;
+        text-align: center;
+        color: $md-grey-800;
+        transition: all 200ms;
+        border-radius: 3px;
+
+        &:hover {
+            background-color: $md-grey-800;
+            color: white;
+            @extend .shadow-2;
+        }
+    }
+}
+
+/* tile for images */
+.tile-img {
+    height: 262.5px;
+    
+    &.headshot { 
+        background: url(../images/me.jpg);
+        background-color: rgba($md-blue-900, .5);
+    }
+
+    
+    background-blend-mode: lighten;
+    background-size: cover !important;
+    background-position: center center;
+}
+

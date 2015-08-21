@@ -1,0 +1,233 @@
+/* fonts */
+@import url(http://fonts.googleapis.com/css?family=Roboto:100,100italic,300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400,700);
+@import url(http://fonts.googleapis.com/css?family=Abril+Fatface);
+/* import all external sheets */
+.btn-md-red, .tile-text > .btn {
+  background-color: #f44336;
+  color: white;
+  transition: all cubic-bezier(0.23, 1, 0.32, 1) 200ms; }
+  .btn-md-red:hover, .tile-text > .btn:hover {
+    background-color: #d32f2f; }
+
+/**
+*
+* base class for material design box shadows
+* use @extend shadow-1; 1 is lowest, 5 is highest
+*
+**/
+.shadow-1, .shadow-hover-1, .shadow-raise-1 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+
+.shadow-2, .shadow-hover-2, .shadow-raise-2, .shadow-hover-1:hover, .shadow-raise-1:hover, .tile-social .icon:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); }
+
+.shadow-3, .shadow-hover-3, .shadow-raise-3, .shadow-hover-2:hover, .shadow-raise-2:hover, .tile-split:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+.shadow-4, .shadow-hover-4, .shadow-raise-4, .shadow-hover-3:hover, .shadow-raise-3:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); }
+
+.shadow-5, .shadow-hover-4:hover, .shadow-raise-4:hover {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); }
+
+/**
+ *
+ * class of mixins that increases box shadow depth on hover
+ *
+ **/
+.shadow-hover-1, .shadow-raise-1, .shadow-hover-2, .shadow-raise-2, .shadow-hover-3, .shadow-raise-3, .shadow-hover-4, .shadow-raise-4 {
+  -webkit-transition: all cubic-bezier(0.23, 1, 0.32, 1) 300ms;
+  -moz-transition: all cubic-bezier(0.23, 1, 0.32, 1) 300ms;
+  transition: all cubic-bezier(0.23, 1, 0.32, 1) 300ms; }
+
+/**
+*
+* class of mixins that increase box shadow depth
+* and raise the object by 5px
+*
+**/
+.shadow-raise-1:hover, .shadow-raise-2:hover, .shadow-raise-3:hover, .shadow-raise-4:hover {
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  transform: translateY(-5px); }
+
+tile {
+  display: block;
+  height: 250px;
+  background-color: white;
+  margin-bottom: 24px;
+  padding: 24px;
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.16);
+  border-radius: 3px; }
+
+.container .container {
+  margin-left: -15px; }
+
+/* tile for name and personal info */
+.tile-text {
+  height: auto; }
+  .tile-text > h1 {
+    font-family: 'Abril Fatface';
+    font-size: 64px;
+    margin: 0 0 16px 0; }
+  .tile-text > h4, .tile-text > p {
+    font-size: 24px;
+    margin: 4px 0;
+    font-weight: 100;
+    font-style: italic; }
+  .tile-text > p {
+    font-size: 20px; }
+
+/* tile for displaying information with an icon / image */
+.tile-split {
+  height: auto;
+  padding: 0;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 200ms; }
+  .tile-split > a {
+    text-decoration: none; }
+  .tile-split.blue .icon {
+    color: #64b5f6; }
+  .tile-split.blue .upper {
+    background-color: #1e88e5; }
+  .tile-split.blue .lower {
+    background-color: #1976d2; }
+  .tile-split.light-blue .icon {
+    color: #4fc3f7; }
+  .tile-split.light-blue .upper {
+    background-color: #039be5; }
+  .tile-split.light-blue .lower {
+    background-color: #0288d1; }
+  .tile-split.red .icon {
+    color: #ef9a9a; }
+  .tile-split.red .upper {
+    background-color: #e53935; }
+  .tile-split.red .lower {
+    background-color: #d32f2f; }
+  .tile-split.indigo .icon {
+    color: #9fa8da; }
+  .tile-split.indigo .upper {
+    background-color: #3949ab; }
+  .tile-split.indigo .lower {
+    background-color: #303f9f; }
+  .tile-split.green .icon {
+    color: #81c784; }
+  .tile-split.green .upper {
+    background-color: #43a047; }
+  .tile-split.green .lower {
+    background-color: #388e3c; }
+  .tile-split.teal .icon {
+    color: #4db6ac; }
+  .tile-split.teal .upper {
+    background-color: #00897b; }
+  .tile-split.teal .lower {
+    background-color: #00796b; }
+  .tile-split.amber .icon {
+    color: #ffd54f; }
+  .tile-split.amber .upper {
+    background-color: #ffb300; }
+  .tile-split.amber .lower {
+    background-color: #ffa000; }
+  .tile-split.white .lower > h4,
+  .tile-split.white .lower > p {
+    color: #424242; }
+
+section.upper {
+  height: auto;
+  padding: 24px 0;
+  border-radius: 3px 3px 0 0; }
+  section.upper .icon {
+    display: block;
+    font-size: 100px;
+    text-align: center; }
+
+section.upper-image {
+  height: 262.5px;
+  background-image: url("../images/water.JPG");
+  background-size: cover;
+  border-radius: 3px 3px 0 0; }
+  section.upper-image nav {
+    position: absolute;
+    width: 54px;
+    top: 230px;
+    left: 0;
+    right: 0;
+    margin: auto; }
+    section.upper-image nav .icon {
+      margin: 0 2px;
+      color: rgba(255, 255, 255, 0.4); }
+    section.upper-image nav .icon.active {
+      color: rgba(255, 255, 255, 0.87); }
+
+section.lower {
+  height: auto;
+  padding: 16px;
+  border-radius: 0 0 3px 3px; }
+  section.lower > h4 {
+    font-weight: 100;
+    font-style: italic;
+    font-size: 24px;
+    margin: 0 0 8px 0;
+    color: white; }
+  section.lower > p {
+    font-weight: 300;
+    color: white;
+    margin: 0; }
+
+/* tile for social icons */
+.tile-social {
+  height: 67.5px;
+  padding: 0; }
+  .tile-social .icon {
+    height: 67.5px;
+    display: block;
+    line-height: 67.5px;
+    font-size: 40px;
+    text-align: center;
+    color: #424242;
+    transition: all 200ms;
+    border-radius: 3px; }
+    .tile-social .icon:hover {
+      background-color: #424242;
+      color: white; }
+
+/* tile for images */
+.tile-img {
+  height: 262.5px;
+  background-blend-mode: lighten;
+  background-size: cover !important;
+  background-position: center center; }
+  .tile-img.headshot {
+    background: url(../images/me.jpg);
+    background-color: rgba(13, 71, 161, 0.5); }
+
+* {
+  font-family: Roboto, sans-serif;
+  color: #424242; }
+
+.bg-full {
+  width: 100%;
+  /*background: url(../images/bg1.jpg);*/
+  background-color: #e0e0e0;
+  overflow: scroll;
+  padding: 0 12px; }
+  .bg-full.no-scroll {
+    overflow: hidden; }
+
+.section-full {
+  position: fixed;
+  border-radius: 3px 3px 0 0;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 200ms;
+  z-index: 100; }
+  .section-full.fullscreen {
+    border-radius: 0; }
+
+.content {
+  /*position: absolute;*/
+  /*top: 0;*/
+  margin: auto;
+  padding-top: 24px;
+  overflow: hidden;
+  /*margin: 50px;*/ }
+
+/*# sourceMappingURL=main.css.map */

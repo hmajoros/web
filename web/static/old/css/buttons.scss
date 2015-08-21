@@ -1,0 +1,9 @@
+.btn-md-red {
+    background-color: $md-red-500;
+    color: white;
+    transition: all $easeOutQuint 200ms;
+
+    &:hover {
+        background-color: $md-red-700;
+    }
+}

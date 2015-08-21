@@ -6,6 +6,6 @@ from web import app
 def index():
     return render_template('index.html', title = 'home')
 
-@app.route('/beta')
-def beta():
-    return render_template('beta.html', title = 'beta')
+@app.route('/legacy')
+def legacy():
+    return render_template('legacy.html', title = 'legacy')
