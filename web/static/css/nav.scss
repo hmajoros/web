@@ -1,0 +1,96 @@
+// TODO: make a variable for the header height
+$headerHeight: 48px;
+
+nav {
+    
+    ul {
+        display: none;
+    }
+
+    .menu {
+        position: absolute;
+        padding: 16px;
+        top: 0;
+        left: 0;
+        line-height: 32px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 529px) {
+    nav {
+        height: $headerHeight; 
+        text-align: center;
+        border-top: 3px solid #eaeaea;
+
+        .menu {
+            display: none;
+        }
+
+        ul {
+            display: inline-block;
+            list-style-type: none;
+            margin: -3px 0 0 0;
+            padding: 0;
+        }
+
+        li {
+            height: $headerHeight; 
+            float: left;
+            border-top: 3px solid #eaeaea;
+        }     
+
+        li.active {
+
+        }
+
+        li:nth-child(1) { border-top-color: $clr-main-1 }
+        li:nth-child(2) { border-top-color: $clr-main-2 }
+        li:nth-child(3) { border-top-color: $clr-main-3 }
+        li:nth-child(4) { border-top-color: $clr-main-4 }
+        li:nth-child(5) { border-top-color: $clr-main-5 }
+        li:nth-child(6) { border-top-color: $clr-main-6 }
+
+        li:nth-child(1):hover  { background-color: $clr-main-1; }
+        li:nth-child(2):hover  { background-color: $clr-main-2; }
+        li:nth-child(3):hover  { background-color: $clr-main-3; }
+        li:nth-child(4):hover  { background-color: $clr-main-4; }
+        li:nth-child(5):hover  { background-color: $clr-main-5; }
+        li:nth-child(6):hover  { background-color: $clr-main-6; }
+        
+        li > a {
+            display: block;
+            padding: 0 16px;
+            line-height: $headerHeight;
+            color: rgba(0, 0, 0, 0.75);
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 700;
+
+            &:hover {
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+        li:hover {
+            background-color: rgba(200, 200, 200, 0.4);
+        }
+
+        // TODO: check if I even need this shit
+        li:active, li:focus {
+            color: rgba(0, 0, 0, 0.75);
+            text-decoration: none;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    nav {
+
+        li > a {
+            padding: 0 24px;
+        }
+            
+    }
+}
