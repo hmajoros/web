@@ -1,0 +1,45 @@
+.btn-flat {
+    position: relative;
+    display: inline-block;
+    height: 36px;
+    min-width: 64px;
+    padding: 0 12px;
+    line-height: 36px;
+    color: black;
+    border: none;
+    border-radius: 2px;
+
+    //TODO: proper font stacks EVERYWHERE.
+    //      use sass vars for everything
+    
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: $md-shadow-1; 
+
+    transition: box-shadow .2s cubic-bezier(.4,0,.2,1);
+
+    &:hover {
+        box-shadow: $md-shadow-2; 
+        text-decoration: none;
+    }
+
+    &.btn-red {
+        background-color: $clr-red-300;
+        color: white;
+    }
+
+    &.btn-blue {
+        background-color: $clr-blue-300;
+        color: white;
+    }
+
+    &.btn-pink {
+        background-color: $clr-pink-300;
+        color: white;
+    }
+}
