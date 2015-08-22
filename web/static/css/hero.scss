@@ -18,6 +18,7 @@ section.hero {
         font-family: 'Abril Fatface';
         font-size: 64px; // minimum font size for small screens
         text-align: center;
+        letter-spacing: initial;
     }
 
     .about {
@@ -31,6 +32,11 @@ section.hero {
             font-style: italic;
         }
     }
+    
+    .btn-wrap {
+        margin-top: 32px;
+    }
+        
 }
 
 @media screen and (min-width: 768px) {
