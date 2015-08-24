@@ -1,25 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <section class="accent-top"></section>
-  
-  <nav>
-    <i class="material-icons menu">menu</i>
-    <ul>
-      <li class="active"><a href="#">HOME</a></li>
-      <li><a href="#">ABOUT</a></li>
-      <li><a href="#">WORK</a></li>
-      <li><a href="#">PROJECTS</a></li>
-      <!-- <li><a href="#">EDUCATION</a></li> -->
-      <!-- <li><a href="#">BLOG</a></li> -->
-      <li><a href="#">PHOTOS</a></li>
-      <li><a href="#">CONTACT</a></li>
-    </ul>
-  </nav> 
 
+  
   <section class="hero">
   <!-- <img src="images/face.jpg" alt="my face"/> -->
     <h1>J. Henry Majoros</h1>
+    <!-- add back in later when migration is ready -->
     <!-- <div class="about clearfix">
       <h4>Frontend Developer</h4>
       <h4>Javascript Wizard</h4>
@@ -29,7 +16,16 @@
         <h4>Coming Soon</h4>
     </div>
     <div class="btn-wrap">
-        <a href="/legacy" class="btn-flat btn-pink">View Legacy Site</a>
+        <a href="https://github.com/hmajoros/web" class="btn-flat btn-red">
+            <span class="material-icons">code</span>View on Github
+        </a>
+        <a href="/static/legacy/files/hmajoros_resume.pdf" class="btn-flat btn-blue">
+            <span class="material-icons">insert_drive_file</span>View Resume
+        </a>
+        <a href="/legacy" class="btn-flat btn-green">
+            <span class="material-icons">explore</span>View Legacy Site
+        </a>
     </div>
   </section>
+
 {% endblock %}

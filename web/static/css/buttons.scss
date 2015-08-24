@@ -3,11 +3,13 @@
     display: inline-block;
     height: 36px;
     min-width: 64px;
+    margin: 8px;
     padding: 0 12px;
     line-height: 36px;
     color: black;
     border: none;
     border-radius: 2px;
+    overflow: hidden;
 
     //TODO: proper font stacks EVERYWHERE.
     //      use sass vars for everything
@@ -28,6 +30,19 @@
         text-decoration: none;
     }
 
+    // for icon buttons {
+    .material-icons {
+        display: block;
+        float: left;
+        line-height: 36px;
+        margin-left: -12px;
+        margin-right: 8px;
+        padding: 0 6px;
+        // rgba background means this will work
+        // regardless of which button color
+        background-color: rgba(0, 0, 0, 0.12);
+    }
+
     &.btn-red {
         background-color: $clr-red-300;
         color: white;
@@ -42,4 +57,20 @@
         background-color: $clr-pink-300;
         color: white;
     }
+
+    &.btn-green {
+        background-color: $clr-green-300;
+        color: white;
+    }
+
+    &.btn-amber{
+        background-color: $clr-amber-300;
+        color: white;
+    }
+
+    &.btn-indigo {
+        background-color: $clr-indigo-300;
+        color: white;
+    }
 }
+
