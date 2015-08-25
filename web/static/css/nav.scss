@@ -17,6 +17,7 @@ nav {
     }
 }
 
+// TODO: add variables for all break points
 @media screen and (min-width: 529px) {
     nav {
         height: $headerHeight; 
