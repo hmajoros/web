@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto', 'Helvetica', sans-serif;
+  font-weight: 300; }
+
 .btn-flat {
   position: relative;
   display: inline-block;
@@ -181,7 +185,7 @@ section.hero {
     display: none; } }
 .accent-45 {
   background: linear-gradient(45deg, #e57373 0%, #e57373 16.666%, #ffd54f 16.666%, #ffd54f 33.333%, #81c784 33.333%, #81c784 50%, #64b5f6 50%, #64b5f6 66.666%, #7986cb 66.666%, #7986cb 83.333%, #f06292 83.333%, #f06292 100%);
-  height: 16px;
+  height: 4px;
   width: 100%; }
 
 section.heading {
@@ -209,5 +213,12 @@ section.heading {
       font-size: 128px; }
     section.heading > h3 {
       font-size: 36px; } }
+section.page-about {
+  text-align: left; }
+  section.page-about h4 {
+    font-size: 32px;
+    margin-bottom: 0; }
+  section.page-about .accent-45 {
+    margin: 16px 0; }
 
 /*# sourceMappingURL=main.css.map */

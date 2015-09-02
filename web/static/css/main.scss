@@ -1,3 +1,4 @@
+@import 'typography';
 @import 'md-colors';
 @import 'vars';
 @import 'shadows';
@@ -6,3 +7,6 @@
 @import 'hero';
 @import 'accent-top';
 @import 'heading';
+
+// specific styles for section pages
+@import 'about';
