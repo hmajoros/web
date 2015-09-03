@@ -1,4 +1,5 @@
 .btn-flat {
+    background: none;
     position: relative;
     display: inline-block;
     height: 36px;
@@ -21,14 +22,16 @@
     outline: none;
     cursor: pointer;
     text-align: center;
-    box-shadow: $md-shadow-1; 
-
-    transition: box-shadow .2s cubic-bezier(.4,0,.2,1);
+    transition: background-color .2s ease-in-out;
 
     &:hover {
-        box-shadow: $md-shadow-2; 
-        text-decoration: none;
+        background-color: rgba(158,158,158,.2);
     }
+
+    &:active {
+        background-color: rgba(158,158,158,.4);
+    }
+
 
     // for icon buttons {
     .material-icons {
@@ -71,6 +74,17 @@
     &.btn-indigo {
         background-color: $clr-indigo-300;
         color: white;
+    }
+
+    &.btn-raised {
+        box-shadow: $md-shadow-1; 
+
+        transition: box-shadow .2s cubic-bezier(.4,0,.2,1);
+
+        &:hover {
+            box-shadow: $md-shadow-2; 
+            text-decoration: none;
+        }
     }
 }
 

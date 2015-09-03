@@ -1,0 +1,39 @@
+.card {
+    box-shadow:0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.2),0 1px 8px 0 rgba(0,0,0,.12);
+    background-color: white;
+
+    .card-head {
+        position: relative;
+        height: 144px;
+        padding: 16px;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.6);
+        background-blend-mode: darken;
+        color: white;
+
+        h3 {
+            margin: 0;
+            position: absolute;
+            font-weight: 300;
+            bottom: 16px;
+        }
+    }
+
+    .card-text {
+        color: rgba(0,0,0,.54);
+        font-size: 13px;
+        line-height: 18px;
+        overflow: hidden;
+        padding: 16px;
+
+        p {
+            margin: 0;
+            font-weight: 400;
+        }
+    }
+
+    .card-action {
+        border-top: 1px solid rgba(0,0,0,.1);
+        text-align: right;
+    }
+}
