@@ -4,18 +4,29 @@
 
     .card-head {
         position: relative;
-        height: 144px;
+        height: 180px;
         padding: 16px;
         background-size: cover;
-        background-color: rgba(0, 0, 0, 0.6);
-        background-blend-mode: darken;
         color: white;
 
-        h3 {
-            margin: 0;
+        .material-icons {
             position: absolute;
-            font-weight: 300;
-            bottom: 16px;
+            width: 32px;
+            height: 32px;
+            top: 16px;
+            right: 16px;
+            font-size: 24px;
+            line-height: 32px;
+            text-align: center;
+            border-radius: 3px;
+            color: white;
+            background-color: rgba(255, 255, 255, 0.12);
+
+            transition: background-color .2s ease-in-out;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.16);
+            }
         }
     }
 
@@ -26,6 +37,13 @@
         overflow: hidden;
         padding: 16px;
 
+        h3 {
+            margin: 0 0 4px 0;
+            font-weight: 400;
+            font-size: 24px;
+            color: rgba(0, 0, 0, 0.70);
+        }
+
         p {
             margin: 0;
             font-weight: 400;
@@ -35,5 +53,10 @@
     .card-action {
         border-top: 1px solid rgba(0,0,0,.1);
         text-align: right;
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
     }
 }
