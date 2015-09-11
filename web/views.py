@@ -14,6 +14,10 @@ def about():
 def work():
     return render_template('work.html', title = 'work')
 
+@app.route('/projects')
+def projects():
+    return render_template('projects.html', title = 'projects')
+
 @app.route('/legacy')
 def legacy():
     return render_template('legacy.html', title = 'legacy')

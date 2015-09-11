@@ -1,6 +1,7 @@
 .card {
     box-shadow:0 3px 4px 0 rgba(0,0,0,.14),0 3px 3px -2px rgba(0,0,0,.2),0 1px 8px 0 rgba(0,0,0,.12);
     background-color: white;
+    border-radius: 2px;
 
     .card-head {
         position: relative;
@@ -37,8 +38,25 @@
         overflow: hidden;
         padding: 16px;
 
+        /* H4 tag used for a subtitle that sits above the main title
+         * see the projects page for an example */
+        h4 {
+          font-size: 13px;
+          font-weight: 400;
+          margin: 0 0 4px 1px;
+          line-height: 24px;
+        }
+
+        /* if two h4 tags are present, we have multiple headers within one card.
+         * again, see projects page for example */
+        h4 ~ h4 {
+          margin-top: 16px;
+          padding-top: 12px;
+          border-top: 1px dashed #eee;
+        }
+
         h3 {
-            margin: 0 0 4px 0;
+            margin: 0 0 12px 0;
             font-weight: 400;
             font-size: 24px;
             color: rgba(0, 0, 0, 0.70);
@@ -47,6 +65,14 @@
         p {
             margin: 0;
             font-weight: 400;
+        }
+
+        ul {
+          padding-left: 24px;
+
+          li {
+            font-weight: 400;
+          }
         }
     }
 
