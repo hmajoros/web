@@ -3,13 +3,20 @@
 <nav>
   <i class="material-icons menu">menu</i>
   <ul>
-    <li class="active"><a href="#">HOME</a></li>
-    <li><a href="#">ABOUT</a></li>
-    <li><a href="#">WORK</a></li>
-    <li><a href="#">PROJECTS</a></li>
+    <li class="active"><a href="/">HOME</a></li>
+    <li><a href="/about">ABOUT</a></li>
+    <li><a href="/work">WORK</a></li>
+    <li><a href="/projects">PROJECTS</a></li>
     <!-- <li><a href="#">EDUCATION</a></li> -->
     <!-- <li><a href="#">BLOG</a></li> -->
-    <li><a href="#">PHOTOS</a></li>
-    <li><a href="#">CONTACT</a></li>
+    <li><a href="/photos">PHOTOS</a></li>
+    <li><a href="/contact">CONTACT</a></li>
   </ul>
 </nav> 
+
+<!-- Adding name to top of every page -->
+{% if title != 'home' %}
+  <section class="hero">
+    <h1>J. Henry Majoros</h1>
+  </section>
+{% endif %}

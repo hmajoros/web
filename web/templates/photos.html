@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="page-photos content container">
+    <div class="row">
+        <div class="col-sm-4">
+            <h4>Photos</h4>
+            <div class="accent-45"></div>
+        </div>
+    </div>
+
+    <div class="row row-photos">
+      
+      {% for photo in photos %}
+      <div class="col-md-3 photo">
+        <img class="img-responsive" src="/static/images/gallery/{{ photo }}">
+      </div>
+      {% endfor %}
+
+    </div>
+</section>
+
+
+{% endblock %}

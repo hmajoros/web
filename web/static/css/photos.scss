@@ -1,0 +1,23 @@
+section.page-photos {
+
+  .row-photos {
+    margin: 16px 0;
+    -moz-column-width: 18em;
+    -webkit-column-width: 18em;
+    -moz-column-gap: 1em;
+    -webkit-column-gap:1em; 
+  }
+
+  .photo {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 12px 0;
+    padding: 0;
+    float: none;
+  }
+
+  .img {
+    position:relative;
+    display: block;
+  }
+}

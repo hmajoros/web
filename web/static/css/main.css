@@ -1,6 +1,14 @@
 * {
   font-family: 'Roboto', 'Helvetica', sans-serif;
-  font-weight: 300; }
+  font-weight: 300;
+  text-align: left; }
+
+h4 {
+  font-size: 32px;
+  margin-bottom: 0; }
+
+.accent-45 {
+  margin: 16px 0; }
 
 .btn-flat {
   background: none;
@@ -285,12 +293,20 @@ section.heading {
       text-decoration: none;
       color: black; }
 
-section.page-about {
-  text-align: left; }
-  section.page-about h4 {
-    font-size: 32px;
-    margin-bottom: 0; }
-  section.page-about .accent-45 {
-    margin: 16px 0; }
+section.page-photos .row-photos {
+  margin: 16px 0;
+  -moz-column-width: 18em;
+  -webkit-column-width: 18em;
+  -moz-column-gap: 1em;
+  -webkit-column-gap: 1em; }
+section.page-photos .photo {
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 12px 0;
+  padding: 0;
+  float: none; }
+section.page-photos .img {
+  position: relative;
+  display: block; }
 
 /*# sourceMappingURL=main.css.map */
