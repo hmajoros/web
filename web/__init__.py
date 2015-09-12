@@ -13,4 +13,23 @@ app = Flask(__name__)
 # 
 # app = start_app()
 
-from web import views
+# from web import views
+
+# setup blueprints for each page
+from web.home.views import home
+app.register_blueprint(home)
+
+from web.about.views import about
+app.register_blueprint(about)
+
+from web.work.views import work 
+app.register_blueprint(work)
+
+from web.projects.views import projects 
+app.register_blueprint(projects)
+
+from web.photos.views import photos 
+app.register_blueprint(photos)
+
+from web.contact.views import contact
+app.register_blueprint(contact)
