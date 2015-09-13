@@ -1,6 +1,6 @@
 from flask import Flask
 # from flask.ext.compress import Compress
-
+import os
 
 app = Flask(__name__)
 
@@ -33,3 +33,7 @@ app.register_blueprint(photos)
 
 from web.contact.views import contact
 app.register_blueprint(contact)
+
+from web.legacy.views import legacy 
+app.register_blueprint(legacy)
+

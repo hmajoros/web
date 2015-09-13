@@ -1,3 +1,8 @@
+// TODO: move this somewhere else
+section.content {
+  margin-bottom: 32px;
+}
+
 @import 'typography';
 @import 'md-colors';
 @import 'vars';
@@ -12,3 +17,4 @@
 // specific styles for section pages
 @import 'about';
 @import 'photos';
+@import 'projects';

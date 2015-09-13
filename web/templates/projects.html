@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<section class="page-about content container">
+<section class="page-projects content container">
   <div class="row">
     <div class="col-sm-4">
       <h4>Projects</h4>
-      <p class="accent-text">For some projects, I unfortunately cannot give a link to source code. For these projects, I've included screenshots of my work instead! </p>
+      <p class="accent-text">Check my <a href="http://github.com/hmajoros">github</a> to see the code behind some of these projects!</p>
       <div class="accent-45"></div>
     </div>
   </div>
-  <div class="row">
+  <div class="row row-projects">
     
     {% for p in projects %}
-      <div class="col-sm-6 col-md-4">
+      <div class="col-sm-6 col-md-4 card-wrap">
         <div class="card">
           <div class="card-text">
-            <h4>{{ p.subtitle }}</h4>
+            <h4>{{ p.subtitle }} <span>{{ p.date }}</span></h4>
             <h3>{{ p.title }}</h3>
             <p>{{ p.description }}</p>
 

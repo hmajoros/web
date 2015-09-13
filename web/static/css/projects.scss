@@ -1,0 +1,19 @@
+section.page-projects {
+
+  .row-projects {
+    margin: 16px -8px;
+    -moz-column-width: 20em;
+    -webkit-column-width: 20em;
+    -moz-column-gap: 1em;
+    -webkit-column-gap:1em; 
+  }
+
+  .card-wrap {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 12px 0;
+    padding: 8px;
+    float: none;
+  }
+ 
+}

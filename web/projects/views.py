@@ -2,12 +2,12 @@ from flask import render_template, Blueprint
 import os, psycopg2, urlparse
 
 class Project():
-  def __init__(self, proj_id=None, title=None, subtitle=None, description=None, codeURL=None):
+  def __init__(self, proj_id=None, title=None, subtitle=None, date=None, description=None):
     self.proj_id = proj_id
     self.title = title
     self.subtitle = subtitle
+    self.date = date
     self.description = description
-    self.codeURL = codeURL
     self.tech = []
     
 urlparse.uses_netloc.append("postgres")
