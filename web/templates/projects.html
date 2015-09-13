@@ -10,28 +10,30 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-sm-6 col-md-4">
-      <div class="card">
-        <div class="card-text">
-          <h4>Grooveshark</h4>
-          <h3>Desktop Miniplayer</h3>
-          <p>Implemented all basic music player functionality while delivering the top requested community feature. Built on node webkit and node.js and tested across multiple OS’s and underwent rigorous code reviews.</p>
+    
+    {% for p in projects %}
+      <div class="col-sm-6 col-md-4">
+        <div class="card">
+          <div class="card-text">
+            <h4>{{ p.subtitle }}</h4>
+            <h3>{{ p.title }}</h3>
+            <p>{{ p.description }}</p>
 
-          <h4>Technologies Used:</h4>
-          <ul>
-            <li>Node Webkit</li>
-            <li>Javascript / node.js</li>
-            <li>HTML / CSS</li>
-          </ul>
-        </div>
-        <div class="card-action">
-          <a class="btn-flat">View Projects</a>
+            <h4>Technologies Used:</h4>
+            <ul>
+              {% for t in p.tech %}
+              <li>{{ t }}</li>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+    {% endfor %}
+
   </div>
 </section>
 
+<!-- TODO: this is a cheap temp fix. add some padding at the bottom -->
 <div style="height: 100px"></div>
 
 {% endblock %}
