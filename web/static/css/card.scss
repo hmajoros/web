@@ -45,6 +45,12 @@
           font-weight: 400;
           margin: 0 0 4px 1px;
           line-height: 24px;
+
+          span {
+            margin-left: 16px;
+            color: $clr-red-300;
+            font-weight: 500;
+          }
         }
 
         /* if two h4 tags are present, we have multiple headers within one card.
@@ -53,6 +59,8 @@
           margin-top: 16px;
           padding-top: 12px;
           border-top: 1px dashed #eee;
+          font-weight: 500;
+          color: rgba(0, 0, 0, 0.75);
         }
 
         h3 {
