@@ -31,6 +31,7 @@ section.hero {
             font-size: 28px;
             font-weight: 100;
             font-style: italic;
+            text-align: center;
         }
     }
     
@@ -66,10 +67,11 @@ section.hero {
 
             h4 {
                 margin: 16px 0 0 0;
-                padding: 0 48px;
+                padding: 0 24px;
                 border-right: 1px solid #bbb;
                 float: left;
                 font-weight: 300;
+                font-size: 24px;
             }
 
             h4:last-child {
@@ -80,7 +82,14 @@ section.hero {
 }
 
 @media screen and (min-width: 1200px) {
-    section.hero h1 {
+    section.hero {
+      h1 {
         font-size: 128px; // max font size for main header
+      }
+
+      .about h4 {
+        padding: 0 48px;
+        font-size: 28px;
+      }
     }
 }

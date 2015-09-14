@@ -99,7 +99,9 @@ nav {
 		li > a {
       min-width: initial;
 			display: block;
-			padding: 0 16px;
+      height: $headerHeight;
+			padding: 4px 16px 0 16px;
+      margin-top: -4px;
 			line-height: $headerHeight;
 			color: rgba(0, 0, 0, 0.75);
 			text-decoration: none;
@@ -117,6 +119,9 @@ nav {
 
 		li:hover {
 			background-color: rgba(200, 200, 200, 0.4);
+      a {
+        color: white;
+      }
 		}
 
 		// TODO: check if I even need this shit
@@ -131,7 +136,7 @@ nav {
 	nav {
 
 		li > a {
-			padding: 0 24px;
+			padding: 4px 24px 0 24px;
 		}
 			
 	}

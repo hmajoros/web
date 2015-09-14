@@ -159,7 +159,9 @@ nav .menu {
     nav li > a {
       min-width: initial;
       display: block;
-      padding: 0 16px;
+      height: 48px;
+      padding: 4px 16px 0 16px;
+      margin-top: -4px;
       line-height: 48px;
       color: rgba(0, 0, 0, 0.75);
       text-decoration: none;
@@ -173,12 +175,14 @@ nav .menu {
         color: white; }
     nav li:hover {
       background-color: rgba(200, 200, 200, 0.4); }
+      nav li:hover a {
+        color: white; }
     nav li:active, nav li:focus {
       color: rgba(0, 0, 0, 0.75);
       text-decoration: none; } }
 @media screen and (min-width: 768px) {
   nav li > a {
-    padding: 0 24px; } }
+    padding: 4px 24px 0 24px; } }
 section.hero {
   text-align: center;
   margin-top: 64px;
@@ -204,7 +208,8 @@ section.hero {
       font-family: 'Roboto';
       font-size: 28px;
       font-weight: 100;
-      font-style: italic; }
+      font-style: italic;
+      text-align: center; }
   section.hero .btn-wrap {
     margin-top: 32px;
     text-align: center; }
@@ -226,15 +231,19 @@ section.hero {
       display: inline-block; }
       section.hero .about h4 {
         margin: 16px 0 0 0;
-        padding: 0 48px;
+        padding: 0 24px;
         border-right: 1px solid #bbb;
         float: left;
-        font-weight: 300; }
+        font-weight: 300;
+        font-size: 24px; }
       section.hero .about h4:last-child {
         border: none; } }
 @media screen and (min-width: 1200px) {
   section.hero h1 {
-    font-size: 128px; } }
+    font-size: 128px; }
+  section.hero .about h4 {
+    padding: 0 48px;
+    font-size: 28px; } }
 .accent-top {
   height: 3px;
   background: linear-gradient(to right, #e57373 0%, #e57373 16.666%, #ffd54f 16.666%, #ffd54f 33.333%, #81c784 33.333%, #81c784 50%, #64b5f6 50%, #64b5f6 66.666%, #7986cb 66.666%, #7986cb 83.333%, #f06292 83.333%, #f06292 100%); }
@@ -375,5 +384,8 @@ section.page-projects .card-wrap {
   margin: 0 0 12px 0;
   padding: 8px;
   float: none; }
+
+section.page-contact form button {
+  margin: 16px 0 0 0; }
 
 /*# sourceMappingURL=main.css.map */
