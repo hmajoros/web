@@ -29,5 +29,7 @@ def submit_form():
   message.set_text(body)
 
   status, msg = sg.send(message)
+  print status
+  print msg
 
   return redirect('/contact?submitted=1')
