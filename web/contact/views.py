@@ -16,8 +16,8 @@ def submit_form():
   email = request.form['email']
   body = request.form['message']
 
-  # body.replace("'", "\'")
-  # body.replace('"', '\"')
+  body.replace("'", "\\'")
+  body.replace('"', '\\"')
 
   sg = sendgrid.SendGridClient(os.environ['SG_USER'], os.environ['SG_PASS'])
   
@@ -31,4 +31,3 @@ def submit_form():
   status, msg = sg.send(message)
 
   return redirect('/contact?submitted=1')
-  # return render_template('contact.html', title = 'contact')
