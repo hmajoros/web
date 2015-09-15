@@ -47,6 +47,15 @@
         background-color: rgba(0, 0, 0, 0.12);
     }
 
+    &.btn-disabled {
+      color: rgba(0,0,0,.26) !important;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
     &.btn-red {
         background-color: $clr-red-300;
         color: white;

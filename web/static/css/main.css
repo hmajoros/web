@@ -52,6 +52,11 @@ h4 {
     margin-right: 8px;
     padding: 0 6px;
     background-color: rgba(0, 0, 0, 0.12); }
+  .btn-flat.btn-disabled {
+    color: rgba(0, 0, 0, 0.26) !important;
+    cursor: not-allowed; }
+    .btn-flat.btn-disabled:hover {
+      background-color: transparent; }
   .btn-flat.btn-red {
     background-color: #e57373;
     color: white; }
@@ -290,6 +295,7 @@ section.heading {
     height: 180px;
     padding: 16px;
     background-size: cover;
+    background-position: center;
     color: white; }
     .card .card-head .material-icons {
       position: absolute;
@@ -387,5 +393,10 @@ section.page-projects .card-wrap {
 
 section.page-contact form button {
   margin: 16px 0 0 0; }
+
+section.page-work .card {
+  margin-bottom: 24px; }
+  section.page-work .card .card-head {
+    border-bottom: 1px solid #eaeaea; }
 
 /*# sourceMappingURL=main.css.map */

@@ -19,12 +19,14 @@ def submit_form():
   body.replace("'", "\\'")
   body.replace('"', '\\"')
 
+  body = 'Sent By: ' + email + '\n\n' + body 
+
   sg = sendgrid.SendGridClient(os.environ['SG_USER'], os.environ['SG_PASS'])
   
   message = sendgrid.Mail()
   message.add_to('majoros.henry@gmail.com')
   message.set_subject('[WEBSITE INQUIRY] - ' + name)
-  message.set_from(email)
+  message.set_from('majoros.henry@gmail.com')
   message.set_from_name(name)
   message.set_text(body)
 
