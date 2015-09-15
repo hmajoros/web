@@ -5,4 +5,6 @@ itsdangerous==0.24
 Jinja2==2.7.3
 MarkupSafe==0.23
 psycopg2==2.6.1
+sendgrid==1.4.0
+smtpapi==0.2.0
 Werkzeug==0.9.6

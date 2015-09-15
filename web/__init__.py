@@ -4,6 +4,7 @@ import os
 
 app = Flask(__name__)
 
+
 # compress = Compress()
 # 
 # def start_app():
