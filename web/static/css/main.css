@@ -361,6 +361,8 @@ section.page-about ul.course-list {
   section.page-about ul.course-list li > span {
     font-weight: 600;
     font-color: rgba(0, 0, 0, 0.54); }
+section.page-about p {
+  font-size: 16px; }
 
 section.page-photos .row-photos {
   margin: 16px 0;
