@@ -114,7 +114,8 @@ nav .menu {
   top: 0;
   left: 0;
   line-height: 32px;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 90; }
 
 @media screen and (min-width: 529px) {
   nav {
@@ -201,13 +202,16 @@ section.hero {
     right: 0;
     border-radius: 50%; }
   section.hero h1 {
-    margin: 0 16px;
+    margin: 0 16px 12px 16px;
     font-family: 'Abril Fatface';
     font-size: 64px;
     text-align: center;
     letter-spacing: initial; }
   section.hero .about {
     margin-top: 24px; }
+    section.hero .about a {
+      color: rgba(0, 0, 0, 0.75);
+      text-decoration: none; }
     section.hero .about h4 {
       margin: 0;
       font-family: 'Roboto';
@@ -356,6 +360,32 @@ section.heading {
       text-decoration: none;
       color: black; }
 
+section.hero-cover {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0; }
+  section.hero-cover .about {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translateY(-75%);
+    -ms-transform: translateY(-75%);
+    transform: translateY(-75%);
+    text-align: center;
+    margin: 0; }
+    section.hero-cover .about .about-text {
+      display: inline-block; }
+  section.hero-cover .btn-wrap {
+    position: absolute;
+    width: 100%;
+    bottom: 32px;
+    text-align: center; }
+
+@media screen and (min-width: 529px) {
+  section.hero-cover {
+    margin-top: -48px; } }
 section.page-about ul.course-list {
   padding-left: 24px; }
   section.page-about ul.course-list li > span {
