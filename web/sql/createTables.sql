@@ -1,14 +1,15 @@
 CREATE TABLE IF NOT EXISTS projects (
-  id serial PRIMARY KEY, 
+  id INT AUTO_INCREMENT, 
   title varchar(40),
   subtitle varchar(40), 
   dateString varchar(20),
-  description text
+  description text,
+  PRIMARY KEY (id)
 );
   
 -- links all technologies used to specific projects
 CREATE TABLE IF NOT EXISTS projects_tech (
-  id serial,
+  id INT,
   tech varchar(40)
 );
 

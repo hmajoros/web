@@ -1,2 +1,2 @@
-drop schema public cascade;
-create schema public;
+drop table projects;
+drop table projects_tech;

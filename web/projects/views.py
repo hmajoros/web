@@ -1,5 +1,6 @@
 from flask import render_template, Blueprint
-import os, psycopg2, urlparse
+from flask.ext.mysql import MySQL
+from web import app
 
 class Project():
   def __init__(self, proj_id=None, title=None, subtitle=None, date=None, description=None):
@@ -10,17 +11,10 @@ class Project():
     self.description = description
     self.tech = []
     
-urlparse.uses_netloc.append("postgres")
-url = urlparse.urlparse(os.environ["DATABASE_URL"])
 
-conn = psycopg2.connect(
-    database=url.path[1:],
-    user=url.username,
-    password=url.password,
-    host=url.hostname,
-    port=url.port
-)
+conn = app.mysql.connect()
 cur = conn.cursor()
+
 cur.execute("""SELECT * FROM projects""")
 rows = cur.fetchall()
 
